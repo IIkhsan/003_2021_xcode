@@ -42,8 +42,10 @@ class PostsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     func readFromFile() {
-        if let text = try? String(contentsOfFile: "/Users/daniil/XCodeProjects/003_2021_xcode/Lesson3/Homework/text.txt") {
-            textArray = text.components(separatedBy: "\n\n")
+        if let path = Bundle.main.path(forResource: "text", ofType: "txt") {
+            if let text = try? String(contentsOfFile: path) {
+                textArray = text.components(separatedBy: "\n\n")
+            }
         }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
