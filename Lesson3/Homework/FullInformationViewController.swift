@@ -8,7 +8,7 @@
 import UIKit
 
 class FullInformationViewController: UIViewController {
-
+    
     @IBOutlet weak var communitieLabel: UILabel!
     @IBOutlet weak var publicationDateLabel: UILabel!
     @IBOutlet weak var communitieImageView: UIImageView!
@@ -23,10 +23,7 @@ class FullInformationViewController: UIViewController {
     
     private func configure() {
         articleTextView.isEditable = false
-
         guard let postCellData = postCellData else { return }
-
-        
         communitieLabel.text = postCellData.communitie
         publicationDateLabel.text = postCellData.publicationDate
         communitieImageView.image = postCellData.communitieImage

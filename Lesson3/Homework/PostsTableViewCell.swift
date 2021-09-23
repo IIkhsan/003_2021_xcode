@@ -8,7 +8,7 @@
 import UIKit
 
 class PostsTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var publicationDateLabel: UILabel!
     @IBOutlet weak var communitieLabel: UILabel!
     @IBOutlet weak var communitieImageView: UIImageView!
@@ -18,7 +18,7 @@ class PostsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state

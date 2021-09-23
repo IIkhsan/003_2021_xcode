@@ -9,11 +9,11 @@ import UIKit
 
 @available(iOS 15, *)
 class PostsTableViewController: UITableViewController {
-
+    
     
     var textArray: [String] = []
     var data: [PostsCellData] = []
-
+    
     let communitieNames = ["Cказки на ночь", "Сказки на утро", "Сказки на день","Сказки на жизнь", "Сказки без настроения", "Сказки с душой","Сказочное чудо","Просто сказки", "Сказки - веселье", "Сказочное было детство"]
     let communitieImages = ["1", "2", "3", "4","5"]
     let postImages = ["6","7","8","9","10","11","12","13"]
@@ -22,7 +22,7 @@ class PostsTableViewController: UITableViewController {
         configure()
     }
     // MARK: - Configure
-    private func configure(){
+    private func configure() {
         readFromFile()
         data = [PostsCellData(communitie: communitieNames[0], communitieImage: UIImage(named: communitieImages.randomElement() ?? "1"), publicationDate: Date.now.description, article: textArray[0], postImage: UIImage(named:postImages.randomElement() ?? "6")),
                 PostsCellData(communitie: communitieNames[1], communitieImage: UIImage(named: communitieImages.randomElement() ?? "1"), publicationDate: Date.now.description, article: textArray[1], postImage: UIImage(named:postImages.randomElement() ?? "6")),
@@ -34,13 +34,12 @@ class PostsTableViewController: UITableViewController {
                 PostsCellData(communitie: communitieNames[7], communitieImage: UIImage(named: communitieImages.randomElement() ?? "1"), publicationDate: Date.now.description, article: textArray[7], postImage: UIImage(named:postImages.randomElement() ?? "6")),
                 PostsCellData(communitie: communitieNames[8], communitieImage: UIImage(named: communitieImages.randomElement() ?? "1"), publicationDate: Date.now.description, article: textArray[8], postImage: UIImage(named:postImages.randomElement() ?? "6")),
                 PostsCellData(communitie: communitieNames[9], communitieImage: UIImage(named: communitieImages.randomElement() ?? "1"), publicationDate: Date.now.description, article: textArray[9], postImage: UIImage(named:postImages.randomElement() ?? "6"))]
-
+        
         tableView.dataSource = self
-        tableView.delegate = self
         
     }
     // MARK: - Table view data source
-
+    
     func readFromFile() {
         if let path = Bundle.main.path(forResource: "text", ofType: "txt") {
             if let text = try? String(contentsOfFile: path) {
