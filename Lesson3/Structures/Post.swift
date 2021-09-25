@@ -14,7 +14,5 @@ struct Post {
     var authorImage: UIImage
     var authorName: String
     var likesCount: Int
-    var commentsCount: Int
-    var repostCount: Int
     var date: Date
 }

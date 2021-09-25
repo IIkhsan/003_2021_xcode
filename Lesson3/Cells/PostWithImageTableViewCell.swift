@@ -60,7 +60,9 @@ class PostWithImageTableViewCell: UITableViewCell {
     private func display(post: Post) {
         authorImageView.image = post.authorImage
         authorNameLabel.text = post.authorName
-        dateLabel.text = post.date.description
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY, MMM d"
+        dateLabel.text = dateFormatter.string(from: post.date)
         contentLabel.text = post.content
         contentImage.image = post.contentImage
         likesCountLabel.text = post.likesCount.description

@@ -20,9 +20,9 @@ class DataManager {
     public func generatePost() -> Post {
         let isHaveImage = Bool.random()
         if isHaveImage {
-            return Post.init(content: postTexts.randomElement()!, contentImage: postImages.randomElement()!, authorImage: avatarImages.randomElement()!, authorName: names.randomElement()!, likesCount: Int.random(in: 2..<69), commentsCount: Int.random(in: 3..<23), repostCount: Int.random(in: 0..<40), date: Date())
+            return Post.init(content: postTexts.randomElement()!, contentImage: postImages.randomElement()!, authorImage: avatarImages.randomElement()!, authorName: names.randomElement()!, likesCount: Int.random(in: 2..<69), date: Date())
         } else {
-            var post = Post.init(content: postTexts.randomElement()!, contentImage: nil, authorImage: avatarImages.randomElement()!, authorName: names.randomElement()!, likesCount: Int.random(in: 2..<69), commentsCount: Int.random(in: 3..<23), repostCount: Int.random(in: 0..<40), date: Date())
+            var post = Post.init(content: postTexts.randomElement()!, contentImage: nil, authorImage: avatarImages.randomElement()!, authorName: names.randomElement()!, likesCount: Int.random(in: 2..<69), date: Date())
             if post.content == "" {
                 post.content = postTexts[1]
             }
