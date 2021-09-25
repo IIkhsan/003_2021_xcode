@@ -14,6 +14,7 @@
 		5E0B809826FA2BAF00F7BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B809626FA2BAF00F7BB92 /* LaunchScreen.storyboard */; };
 		7421E5C126FE4BB900BE84D8 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421E5BF26FE4BB900BE84D8 /* DetailPostViewController.swift */; };
 		7421E5C226FE4BB900BE84D8 /* DetailPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7421E5C026FE4BB900BE84D8 /* DetailPostViewController.xib */; };
+		744D418526FF20F3000EA808 /* PostWithImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 744D418426FF20F3000EA808 /* PostWithImageTableViewCell.xib */; };
 		74C841E126FE038000208511 /* LayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C841E026FE038000208511 /* LayerManager.swift */; };
 		74C841E326FE0CDE00208511 /* DelegateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C841E226FE0CDE00208511 /* DelegateProtocols.swift */; };
 		74D2A78226FD01FB00193B26 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2A78126FD01FB00193B26 /* TableViewController.swift */; };
@@ -21,7 +22,6 @@
 		74D2A78B26FDC38100193B26 /* PostWithoutImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2A78926FDC38100193B26 /* PostWithoutImageTableViewCell.swift */; };
 		74D2A78C26FDC38100193B26 /* PostWithoutImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D2A78A26FDC38100193B26 /* PostWithoutImageTableViewCell.xib */; };
 		74D2A79126FDC6DA00193B26 /* PostWithImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2A78F26FDC6DA00193B26 /* PostWithImageTableViewCell.swift */; };
-		74D2A79226FDC6DA00193B26 /* PostWithImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74D2A79026FDC6DA00193B26 /* PostWithImageTableViewCell.xib */; };
 		74D2A79426FDD46500193B26 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2A79326FDD46500193B26 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +35,7 @@
 		5E0B809926FA2BAF00F7BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7421E5BF26FE4BB900BE84D8 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
 		7421E5C026FE4BB900BE84D8 /* DetailPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPostViewController.xib; sourceTree = "<group>"; };
+		744D418426FF20F3000EA808 /* PostWithImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWithImageTableViewCell.xib; sourceTree = "<group>"; };
 		74C841E026FE038000208511 /* LayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerManager.swift; sourceTree = "<group>"; };
 		74C841E226FE0CDE00208511 /* DelegateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProtocols.swift; sourceTree = "<group>"; };
 		74D2A78126FD01FB00193B26 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +43,6 @@
 		74D2A78926FDC38100193B26 /* PostWithoutImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithoutImageTableViewCell.swift; sourceTree = "<group>"; };
 		74D2A78A26FDC38100193B26 /* PostWithoutImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWithoutImageTableViewCell.xib; sourceTree = "<group>"; };
 		74D2A78F26FDC6DA00193B26 /* PostWithImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWithImageTableViewCell.swift; sourceTree = "<group>"; };
-		74D2A79026FDC6DA00193B26 /* PostWithImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostWithImageTableViewCell.xib; sourceTree = "<group>"; };
 		74D2A79326FDD46500193B26 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 				74D2A78926FDC38100193B26 /* PostWithoutImageTableViewCell.swift */,
 				74D2A78A26FDC38100193B26 /* PostWithoutImageTableViewCell.xib */,
 				74D2A78F26FDC6DA00193B26 /* PostWithImageTableViewCell.swift */,
-				74D2A79026FDC6DA00193B26 /* PostWithImageTableViewCell.xib */,
+				744D418426FF20F3000EA808 /* PostWithImageTableViewCell.xib */,
 				74D2A79326FDD46500193B26 /* DataManager.swift */,
 				74C841E026FE038000208511 /* LayerManager.swift */,
 				74C841E226FE0CDE00208511 /* DelegateProtocols.swift */,
@@ -158,8 +158,8 @@
 				7421E5C226FE4BB900BE84D8 /* DetailPostViewController.xib in Resources */,
 				5E0B809526FA2BAF00F7BB92 /* Assets.xcassets in Resources */,
 				74D2A78C26FDC38100193B26 /* PostWithoutImageTableViewCell.xib in Resources */,
-				74D2A79226FDC6DA00193B26 /* PostWithImageTableViewCell.xib in Resources */,
 				5E0B809326FA2BAE00F7BB92 /* Main.storyboard in Resources */,
+				744D418526FF20F3000EA808 /* PostWithImageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

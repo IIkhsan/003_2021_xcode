@@ -25,8 +25,9 @@ class PostWithImageTableViewCell: UITableViewCell {
     @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     
+    
     //MARK: IB Actions
-    @IBAction func likeButtonPressed(_ sender: UIButton) {
+    @IBAction func likeButtonnPressed(_ sender: UIButton) {
         isLikePressed = !isLikePressed
         if isLikePressed {
             delegate?.likeTapped(sender: self)

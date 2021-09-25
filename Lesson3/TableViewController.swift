@@ -16,9 +16,11 @@ class TableViewController: UITableViewController {
     //MARK: VC Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        posts = dataManager.generateArrayOfPosts(count: 14)
+        posts = dataManager.generateArrayOfPosts(count: 28)
         tableView.register(UINib.init(nibName: "PostWithoutImageTableViewCell", bundle: nil), forCellReuseIdentifier: "postWithoutImage")
         tableView.register(UINib.init(nibName: "PostWithImageTableViewCell", bundle: nil), forCellReuseIdentifier: "postWithImage")
+        tableView.estimatedRowHeight = 512
+        tableView.rowHeight = UITableView.automaticDimension
     }
 
     // MARK: - Table view methods

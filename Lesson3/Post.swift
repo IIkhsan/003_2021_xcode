@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 struct Post {
-    let content: String
-    let contentImage: UIImage?
-    let authorImage: UIImage
-    let authorName: String
+    var content: String
+    var contentImage: UIImage?
+    var authorImage: UIImage
+    var authorName: String
     var likesCount: Int
     var commentsCount: Int
     var repostCount: Int
-    let date: Date
+    var date: Date
 }
