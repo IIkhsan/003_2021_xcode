@@ -12,7 +12,7 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Variables
-    private var posts: [Post?]?
+    private var posts: [Post] = []
     private let dataManager = DataManager()
 
     //MARK: - View controller's cycle
@@ -25,13 +25,19 @@ class NewsViewController: UIViewController {
     //MARK: - Table's method
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let unwrappedPost = posts![indexPath.row] else { return }
-        performSegue(withIdentifier: "postSeque", sender: unwrappedPost)
+        let post = posts[indexPath.row]
+        if post.image == nil, post.text != nil {
+            performSegue(withIdentifier: "textPostSeque", sender: post)
+        } else {
+            performSegue(withIdentifier: "postSeque", sender: post)
+        }
     }
     
     //MARK: - Helpers
     private func configure() {
-        tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postTableCellIndetifier")
+        tableView.register(UINib(nibName: "ImageTableViewCell", bundle: nil), forCellReuseIdentifier: "imageTableCellIndetifier")
+        tableView.register(UINib(nibName: "TextTableViewCell", bundle: nil), forCellReuseIdentifier: "textTableCellIndetifier")
         tableView.estimatedRowHeight = 400
     }
     
@@ -41,6 +47,10 @@ class NewsViewController: UIViewController {
             let post = sender as? Post {
                 viewController.post = post
         }
+        if segue.identifier == "textPostSeque", let viewController = segue.destination as? DetailedTextViewController,
+           let post = sender as? Post {
+            viewController.post = post
+        }
     }
 }
 
@@ -48,17 +58,20 @@ class NewsViewController: UIViewController {
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if posts != nil {
-            return posts!.count
-        } else {
-            return 0
-        }
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! PostTableViewCell
-        cell.configure(posts![indexPath.row])
-        return cell
+        let post = posts[indexPath.row]
+        let cell: Configurable
+        if post.image == nil && post.text != nil {
+            cell = tableView.dequeueReusableCell(withIdentifier: "textTableCellIndetifier", for: indexPath) as! TextTableViewCell
+        } else if post.text == nil && post.image != nil {
+            cell = tableView.dequeueReusableCell(withIdentifier: "imageTableCellIndetifier", for: indexPath) as! ImageTableViewCell
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "postTableCellIndetifier", for: indexPath) as! PostTableViewCell
+        }
+        cell.configure(post)
+        return cell as! UITableViewCell
     }
 }
-

@@ -16,10 +16,12 @@ class DataManager {
     private let nicks = ["sixz.r", "asda.sd", "el.primo", "welcome"]
     
     //MARK: - Generating
-    func generatePosts(_ count: Int) -> [Post?] {
-        var posts = [Post?]()
+    func generatePosts(_ count: Int) -> [Post] {
+        var posts = [Post]()
         for _ in 1...count {
-            posts.append(generatePost())
+            if let post = generatePost() {
+                posts.append(post)
+            }
         }
         return posts
     }
@@ -28,7 +30,18 @@ class DataManager {
         guard let author = generateAuthor() else { return nil }
         guard let photo = photos.compactMap({ UIImage(named: $0) }).randomElement() else { return nil }
         guard let text = text.randomElement() else { return nil }
-        let post = Post(author: author, image: photo, text: text)
+        let randomTypeCouner = Int.random(in: 1...3)
+        let post: Post
+        switch randomTypeCouner {
+        case 1:
+            post = Post(author: author, image: nil, text: text)
+        case 2:
+            post = Post(author: author, image: photo, text: nil)
+        case 3:
+            post = Post(author: author, image: photo, text: text)
+        default:
+            fatalError()
+        }
         return post
     }
     

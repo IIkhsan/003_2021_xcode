@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell, Configurable {
     
     //MARK: - UI
     @IBOutlet weak var authorNameTextLabel: UILabel!
@@ -25,11 +25,19 @@ class PostTableViewCell: UITableViewCell {
     }
     
     //MARK: - Configure
-    func configure(_ post: Post?) {
-        authorNameTextLabel.text = post?.author?.name
-        authorAvatarImageView.image = post?.author?.avatar
-        mainImageView.image = post?.image
-        descriptionForImageLabel.text = post?.text
+    func configure(_ post: Post) {
+        authorNameTextLabel.text = post.author.name
+        authorAvatarImageView.image = post.author.avatar
+        if post.image == nil {
+            mainImageView.image = UIImage(named: "trash")
+        } else {
+            mainImageView.image = post.image
+        }
+        if post.text == nil {
+            descriptionForImageLabel.text = "Error: данные не загрузились"
+            self.descriptionForImageLabel.textColor = .red
+        } else {
+            descriptionForImageLabel.text = post.text
+        }
     }
-    
 }

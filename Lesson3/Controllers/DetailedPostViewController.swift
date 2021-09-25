@@ -26,10 +26,14 @@ class DetailedPostViewController: UIViewController {
     
     //MARK: - Helpers
     private func configure() {
-        guard let unwrappedPost = post else { return }
-        authorAvatarImageView.image = unwrappedPost.author?.avatar
-        authorNameTextLabel.text = unwrappedPost.author?.name
-        mainImageView.image = unwrappedPost.image
-        textForImageView.text = unwrappedPost.text
+        guard let post = post else { return }
+        configure(post)
+    }
+    
+    func configure(_ post: Post) {
+        authorAvatarImageView.image = post.author.avatar
+        authorNameTextLabel.text = post.author.name
+        mainImageView.image = post.image
+        textForImageView.text = post.text
     }
 }

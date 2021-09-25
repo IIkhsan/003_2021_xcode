@@ -60,6 +60,7 @@
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zIf-V6-hhv">
                         <rect key="frame" x="0.0" y="50" width="320" height="320"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="zIf-V6-hhv" secondAttribute="height" multiplier="1:1" id="t2l-0A-PR1"/>
                         </constraints>
