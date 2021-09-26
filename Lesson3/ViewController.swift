@@ -49,11 +49,11 @@ extension ViewController: PostTableViewCellDelegate {
         tableView.reloadRows(at: [cellIndexPath], with: .bottom)
     }
 }
-  
-// MARK: - Table view data source & delegate
-    
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
+// MARK: - Table view data source & delegate
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -63,7 +63,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell:PostTableViewCell
         
         if post.image == nil {
-             
+            
             cell = tableView.dequeueReusableCell(withIdentifier: "PostTextTableViewCell", for: indexPath) as! PostTextTableViewCell
             
         }else if post.text == nil {
@@ -72,12 +72,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell = tableView.dequeueReusableCell(withIdentifier: "PostTextImageTableViewCell", for: indexPath) as! PostTextImageTableViewCell
         }
         cell.configure(post: post, delegate: self)
-
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    
+        
         let post = posts[indexPath.row]
         if post.image == nil {
             return 200

@@ -13,25 +13,20 @@ protocol PostDetailViewControllerDelegate: AnyObject {
 
 class PostDetailViewController: UIViewController {
     
-    // UI
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var postImage: UIImageView!
     
-    // Properties
     var post: Post?
     weak var delegate: PostDetailViewControllerDelegate?
-
-    // - MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configure()
     }
     
-    // Private methods
     private func configure() {
         guard let post = post else { return }
         userImage.image = post.author.image

@@ -8,7 +8,7 @@
 import UIKit
 
 class PostImageTableViewCell: PostTableViewCell {
-
+    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
@@ -17,10 +17,10 @@ class PostImageTableViewCell: PostTableViewCell {
         super.awakeFromNib()
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     override func configure(post: Post, delegate: PostTableViewCellDelegate) {
