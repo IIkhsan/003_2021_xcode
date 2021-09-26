@@ -5,9 +5,9 @@
 //  Created by i.ikhsanov on 21.09.2021.
 //
 
-import Foundation
+import UIKit
 
-struct Student {
-    let name: String
-    var groupNumber: String
+struct User {
+    var username: String
+    var image: UIImage?
 }
