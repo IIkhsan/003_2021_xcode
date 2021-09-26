@@ -9,12 +9,15 @@ import UIKit
 
 class FullInformationViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var communitieLabel: UILabel!
     @IBOutlet weak var publicationDateLabel: UILabel!
     @IBOutlet weak var communitieImageView: UIImageView!
-    @IBOutlet weak var articleTextView: UITextView!
+    @IBOutlet weak var postImageView: UIImageView!
+    @IBOutlet weak var articleLabel: UILabel!
     
-    var postCellData: PostsCellData?
+    
+    var postCellData: PostCellData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +25,13 @@ class FullInformationViewController: UIViewController {
     }
     
     private func configure() {
-        articleTextView.isEditable = false
+        scrollView.contentSize = CGSize(width: 320, height: 1100)
         guard let postCellData = postCellData else { return }
         communitieLabel.text = postCellData.communitie
         publicationDateLabel.text = postCellData.publicationDate
         communitieImageView.image = postCellData.communitieImage
-        articleTextView.text = postCellData.article
-        
+        postImageView.image = postCellData.postImage
+        articleLabel.text = postCellData.article
+        articleLabel.sizeToFit()
     }
-    
-    
 }

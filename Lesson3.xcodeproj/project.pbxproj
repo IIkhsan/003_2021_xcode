@@ -19,8 +19,12 @@
 		5E0B80A626FA3B2800F7BB92 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B80A526FA3B2800F7BB92 /* StudentDetailViewController.swift */; };
 		A51625D326FCCB9000EF873E /* FullInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51625D226FCCB9000EF873E /* FullInformationViewController.swift */; };
 		A532527126FD136F001E50E0 /* text.txt in Resources */ = {isa = PBXBuildFile; fileRef = A5C009CD26FB818E00D62F27 /* text.txt */; };
+		A5396DB12700F0F0006914A2 /* PostCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5396DB02700F0F0006914A2 /* PostCellData.swift */; };
+		A5396DB32700F14C006914A2 /* PicturePostCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5396DB22700F14C006914A2 /* PicturePostCellData.swift */; };
 		A5C009CC26FB7D7400D62F27 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C009CB26FB7D7400D62F27 /* PostsTableViewController.swift */; };
 		A5C009CF26FB8B6300D62F27 /* PostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C009CE26FB8B6300D62F27 /* PostsTableViewCell.swift */; };
+		A5D22D7E26FF22F500046E36 /* PicturePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D22D7D26FF22F500046E36 /* PicturePostTableViewCell.swift */; };
+		A5D22D8026FF3C6100046E36 /* PictureFullInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D22D7F26FF3C6100046E36 /* PictureFullInformationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,9 +41,13 @@
 		5E0B80A326FA337500F7BB92 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		5E0B80A526FA3B2800F7BB92 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
 		A51625D226FCCB9000EF873E /* FullInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullInformationViewController.swift; sourceTree = "<group>"; };
+		A5396DB02700F0F0006914A2 /* PostCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellData.swift; sourceTree = "<group>"; };
+		A5396DB22700F14C006914A2 /* PicturePostCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePostCellData.swift; sourceTree = "<group>"; };
 		A5C009CB26FB7D7400D62F27 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		A5C009CD26FB818E00D62F27 /* text.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
 		A5C009CE26FB8B6300D62F27 /* PostsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewCell.swift; sourceTree = "<group>"; };
+		A5D22D7D26FF22F500046E36 /* PicturePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturePostTableViewCell.swift; sourceTree = "<group>"; };
+		A5D22D7F26FF3C6100046E36 /* PictureFullInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureFullInformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,10 @@
 				A5C009CB26FB7D7400D62F27 /* PostsTableViewController.swift */,
 				A5C009CE26FB8B6300D62F27 /* PostsTableViewCell.swift */,
 				A51625D226FCCB9000EF873E /* FullInformationViewController.swift */,
+				A5D22D7D26FF22F500046E36 /* PicturePostTableViewCell.swift */,
+				A5D22D7F26FF3C6100046E36 /* PictureFullInformationViewController.swift */,
+				A5396DB02700F0F0006914A2 /* PostCellData.swift */,
+				A5396DB22700F14C006914A2 /* PicturePostCellData.swift */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -184,9 +196,13 @@
 				5E0B80A626FA3B2800F7BB92 /* StudentDetailViewController.swift in Sources */,
 				A51625D326FCCB9000EF873E /* FullInformationViewController.swift in Sources */,
 				5E0B808E26FA2BAE00F7BB92 /* SceneDelegate.swift in Sources */,
+				A5396DB12700F0F0006914A2 /* PostCellData.swift in Sources */,
 				5E0B80A426FA337500F7BB92 /* TableViewCell.swift in Sources */,
 				A5C009CF26FB8B6300D62F27 /* PostsTableViewCell.swift in Sources */,
 				5E0B80A226FA315C00F7BB92 /* Student.swift in Sources */,
+				A5396DB32700F14C006914A2 /* PicturePostCellData.swift in Sources */,
+				A5D22D8026FF3C6100046E36 /* PictureFullInformationViewController.swift in Sources */,
+				A5D22D7E26FF22F500046E36 /* PicturePostTableViewCell.swift in Sources */,
 				5E0B80A026FA2C6400F7BB92 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
