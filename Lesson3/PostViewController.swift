@@ -21,7 +21,6 @@ class PostViewController: UIViewController {
     }
     
     func configure(avatarImage: String, name: String, postInfo: String, postImage: String, postText: String){
-        print(self.avatarImage)
         self.avatarImage.image = UIImage(named: avatarImage)
         nameLabel.text = name
         postInfoLabel.text = postInfo
