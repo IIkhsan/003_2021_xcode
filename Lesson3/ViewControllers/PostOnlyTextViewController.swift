@@ -7,18 +7,15 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class PostOnlyTextViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileName: UILabel!
-    @IBOutlet weak var contentImage: UIImageView!
     @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
     var post: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSize(width: 320, height: 700)
         makeDetailPost()
     }
     
@@ -26,7 +23,6 @@ class DetailsViewController: UIViewController {
         guard let post = post else {return}
         profileImage.image = post.profileImage
         profileName.text = post.profileLabel
-        contentImage.image = post.contentImage
         infoLabel.text = post.info
         infoLabel.sizeToFit()
     }

@@ -12,5 +12,5 @@ struct Post {
     let contentImage: UIImage?
     let profileImage: UIImage?
     let profileLabel: String
-    let info: String
+    let info: String?
 }
