@@ -53,12 +53,10 @@ class TableViewController: UIViewController {
            let post = sender as? Post {
             viewController.post = post
         }
-        
         if segue.identifier == "imagePostSeque", let viewController = segue.destination as? PostOnlyImageViewController,
            let post = sender as? Post {
             viewController.post = post
         }
-        
         if segue.identifier == "textPostSeque", let viewController = segue.destination as? PostOnlyTextViewController,
            let post = sender as? Post {
             viewController.post = post
