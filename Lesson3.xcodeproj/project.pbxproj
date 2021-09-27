@@ -13,10 +13,13 @@
 		5E0B809326FA2BAE00F7BB92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B809126FA2BAE00F7BB92 /* Main.storyboard */; };
 		5E0B809526FA2BAF00F7BB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B809426FA2BAF00F7BB92 /* Assets.xcassets */; };
 		5E0B809826FA2BAF00F7BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B809626FA2BAF00F7BB92 /* LaunchScreen.storyboard */; };
-		5E0B80A026FA2C6400F7BB92 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B809F26FA2C6400F7BB92 /* TableViewController.swift */; };
-		5E0B80A226FA315C00F7BB92 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B80A126FA315C00F7BB92 /* Student.swift */; };
-		5E0B80A426FA337500F7BB92 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B80A326FA337500F7BB92 /* TableViewCell.swift */; };
-		5E0B80A626FA3B2800F7BB92 /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B80A526FA3B2800F7BB92 /* StudentDetailViewController.swift */; };
+		923477BE26FE3667004AF86B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923477BD26FE3667004AF86B /* Post.swift */; };
+		923477C126FE3A4D004AF86B /* PostInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923477C026FE3A4D004AF86B /* PostInformation.swift */; };
+		923477C426FE3CB5004AF86B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923477C326FE3CB5004AF86B /* CustomTableViewCell.swift */; };
+		929E995C26FF96F6009F022C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929E995B26FF96F6009F022C /* DetailViewController.swift */; };
+		92DF3F512700E8A1006563B8 /* PhotoCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF3F502700E8A1006563B8 /* PhotoCustomTableViewCell.swift */; };
+		92DF3F532700EB8A006563B8 /* CustomTableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF3F522700EB8A006563B8 /* CustomTableViewCellProtocol.swift */; };
+		92DF3F552700ED29006563B8 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF3F542700ED29006563B8 /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +31,13 @@
 		5E0B809426FA2BAF00F7BB92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0B809726FA2BAF00F7BB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0B809926FA2BAF00F7BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E0B809F26FA2C6400F7BB92 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		5E0B80A126FA315C00F7BB92 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		5E0B80A326FA337500F7BB92 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		5E0B80A526FA3B2800F7BB92 /* StudentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
+		923477BD26FE3667004AF86B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		923477C026FE3A4D004AF86B /* PostInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInformation.swift; sourceTree = "<group>"; };
+		923477C326FE3CB5004AF86B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		929E995B26FF96F6009F022C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		92DF3F502700E8A1006563B8 /* PhotoCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCustomTableViewCell.swift; sourceTree = "<group>"; };
+		92DF3F522700EB8A006563B8 /* CustomTableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellProtocol.swift; sourceTree = "<group>"; };
+		92DF3F542700ED29006563B8 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +70,30 @@
 		5E0B808A26FA2BAE00F7BB92 /* Lesson3 */ = {
 			isa = PBXGroup;
 			children = (
+				923477BF26FE36D8004AF86B /* static */,
 				5E0B808B26FA2BAE00F7BB92 /* AppDelegate.swift */,
 				5E0B808D26FA2BAE00F7BB92 /* SceneDelegate.swift */,
-				5E0B808F26FA2BAE00F7BB92 /* ViewController.swift */,
-				5E0B80A526FA3B2800F7BB92 /* StudentDetailViewController.swift */,
-				5E0B80A326FA337500F7BB92 /* TableViewCell.swift */,
-				5E0B809F26FA2C6400F7BB92 /* TableViewController.swift */,
-				5E0B80A126FA315C00F7BB92 /* Student.swift */,
 				5E0B809126FA2BAE00F7BB92 /* Main.storyboard */,
 				5E0B809426FA2BAF00F7BB92 /* Assets.xcassets */,
 				5E0B809626FA2BAF00F7BB92 /* LaunchScreen.storyboard */,
 				5E0B809926FA2BAF00F7BB92 /* Info.plist */,
+				923477BD26FE3667004AF86B /* Post.swift */,
+				923477C026FE3A4D004AF86B /* PostInformation.swift */,
+				923477C326FE3CB5004AF86B /* CustomTableViewCell.swift */,
+				5E0B808F26FA2BAE00F7BB92 /* ViewController.swift */,
+				929E995B26FF96F6009F022C /* DetailViewController.swift */,
+				92DF3F502700E8A1006563B8 /* PhotoCustomTableViewCell.swift */,
+				92DF3F522700EB8A006563B8 /* CustomTableViewCellProtocol.swift */,
+				92DF3F542700ED29006563B8 /* PhotoDetailViewController.swift */,
 			);
 			path = Lesson3;
+			sourceTree = "<group>";
+		};
+		923477BF26FE36D8004AF86B /* static */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = static;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,13 +166,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				923477C426FE3CB5004AF86B /* CustomTableViewCell.swift in Sources */,
 				5E0B809026FA2BAE00F7BB92 /* ViewController.swift in Sources */,
 				5E0B808C26FA2BAE00F7BB92 /* AppDelegate.swift in Sources */,
-				5E0B80A626FA3B2800F7BB92 /* StudentDetailViewController.swift in Sources */,
+				92DF3F532700EB8A006563B8 /* CustomTableViewCellProtocol.swift in Sources */,
+				92DF3F552700ED29006563B8 /* PhotoDetailViewController.swift in Sources */,
 				5E0B808E26FA2BAE00F7BB92 /* SceneDelegate.swift in Sources */,
-				5E0B80A426FA337500F7BB92 /* TableViewCell.swift in Sources */,
-				5E0B80A226FA315C00F7BB92 /* Student.swift in Sources */,
-				5E0B80A026FA2C6400F7BB92 /* TableViewController.swift in Sources */,
+				923477C126FE3A4D004AF86B /* PostInformation.swift in Sources */,
+				929E995C26FF96F6009F022C /* DetailViewController.swift in Sources */,
+				92DF3F512700E8A1006563B8 /* PhotoCustomTableViewCell.swift in Sources */,
+				923477BE26FE3667004AF86B /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
