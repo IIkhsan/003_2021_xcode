@@ -2,53 +2,71 @@
 //  TableViewController.swift
 //  Lesson3
 //
-//  Created by i.ikhsanov on 21.09.2021.
+//  Created by Alina Bikkinina on 27.09.2021.
 //
 
 import UIKit
 
 class TableViewController: UITableViewController {
-
-    let students: [Student] = [Student(name: "Alex", groupNumber: "11-108"),
-                               .init(name: "Mikal", groupNumber: "11-205"),
-                               .init(name: "Bulat", groupNumber: "12-304"),
-                               .init(name: "Marat", groupNumber: "11-103")]
     
+    var posts: [News] = [NewsWithImage.init(groupTitle: "Как я встретил столбняк", groupImg: UIImage.init(named: "g1") ?? UIImage(), postTime: "8:15", postText: "hup", hasImage: true, postImage: UIImage.init(named: "p1") ?? UIImage())]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Новости"
+        tableView.dataSource = self
+        tableView.delegate = self
+        let nib = UINib(nibName: "TestCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "TestTableViewCell")
         
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+//        self.tableView.register(TestTableViewCell.self, forCellReuseIdentifier: "TestTableViewCell")
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return posts.count
     }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
-        cell.textLabel?.text = students[indexPath.row].name
-        cell.detailTextLabel?.text = students[indexPath.row].groupNumber
-        cell.imageView?.image = #imageLiteral(resourceName: "image1")
+        let currentPost = posts[indexPath.row]
 
-        return cell
+        if currentPost.hasImage {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TestTableViewCell", for: indexPath) as? TestTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.setData(postInfo: currentPost as! NewsWithImage)
+            return cell
+        }
+        
+        let newCell = TextNewsTableViewCell()
+        newCell.setData(postInfo: currentPost)
+        return newCell
+        }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            posts[indexPath.row].hasImage ? 582 : 250
+        }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let currentPost = posts[indexPath.row]
+
+        if currentPost.hasImage {
+            let imageScreenStoryboard = UIStoryboard(name: "ImageScreen",bundle: nil)
+            guard let imagePostViewController = imageScreenStoryboard.instantiateViewController(withIdentifier: "ImagePostViewController") as? ImagePostViewController else { return }
+            imagePostViewController.post = posts[indexPath.row] as! NewsWithImage
+            present(imagePostViewController, animated: true)
+        }
+        
+        let textScreenStoryboard = UIStoryboard(name: "TextScreen",bundle: nil)
+        guard let textPostViewController = textScreenStoryboard.instantiateViewController(withIdentifier: "TextPostViewController") as? TextPostViewController else { return }
+        textPostViewController.post = posts[indexPath.row]
+        present(textPostViewController, animated: true)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
