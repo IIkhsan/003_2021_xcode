@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PostDetailViewController: UITableViewController {
+class PostDetailViewController: UIViewController {
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var authorProfileImageView: UIImageView!
     @IBOutlet weak var authorUsernameLabel: UILabel!
@@ -19,16 +19,6 @@ class PostDetailViewController: UITableViewController {
         authorProfileImageView.layer.cornerRadius = authorProfileImageView.frame.height / 2
         authorProfileImageView.clipsToBounds = true
         loadData(with: post)
-    }
-
-    // MARK: - Table view data source and delegate methods
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
     }
     
     func loadData(with post: Post?) {
