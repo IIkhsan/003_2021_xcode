@@ -1,0 +1,33 @@
+//
+//  DetailViewController.swift
+//  Thirdpair
+//
+//  Created by Тимур Миргалиев on 28.09.2021.
+//
+
+import UIKit
+
+class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var avatar: UIImageView!
+    
+    @IBOutlet weak var nameHowPost: UILabel!
+    
+    @IBOutlet weak var textOfPost: UILabel!
+    
+    @IBOutlet weak var imageOfPost: UIImageView!
+    
+    @IBOutlet weak var daeOfPost: UILabel!
+    
+    var post: Post?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        avatar.image = UIImage(named: post?.avatar ?? "")
+        avatar.layer.cornerRadius = 20
+        nameHowPost.text = post?.name
+        textOfPost.text = post?.textOfPost
+        imageOfPost.image = UIImage(named: post?.imageOfOfPost ?? "")
+        daeOfPost.text = "вчера"
+    }
+}
