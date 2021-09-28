@@ -15,4 +15,11 @@ class ImageDetailsViewController: PostDetailViewController {
         super.loadData(with: post)
         contentImageView.image = post?.image
     }
+    
+    override func updateConstraint(_ constraint: NSLayoutConstraint) {
+        let headerHeight: CGFloat = 100
+        let imageHeight = contentImageView.frame.height
+        let space: CGFloat = 100
+        constraint.constant = max(constraint.constant, headerHeight + imageHeight + space)
+    }
 }

@@ -84,15 +84,15 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpg-Qo-2Ec">
-                                                <rect key="frame" x="93" y="10" width="41" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="93" y="10" width="44" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlK-ea-0Ao">
-                                                <rect key="frame" x="93" y="37" width="41" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="93" y="37" width="44" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkM-CJ-ehb">
@@ -145,6 +145,8 @@
                         <outlet property="authorProfileImageView" destination="NfR-v9-dfL" id="OrC-d0-vQB"/>
                         <outlet property="authorUsernameLabel" destination="IlK-ea-0Ao" id="gO2-dH-aoU"/>
                         <outlet property="contentLabel" destination="CkM-CJ-ehb" id="TdU-Jn-H3V"/>
+                        <outlet property="parentView" destination="kh9-dS-7SW" id="JRA-wF-8WJ"/>
+                        <outlet property="viewHeightConstraint" destination="bsY-Hg-jOM" id="jtw-m2-lFV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OdP-7E-DDI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -173,15 +175,15 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m79-sk-nh2">
-                                                <rect key="frame" x="93" y="10" width="41" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="93" y="10" width="44.333333333333343" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4EV-rX-geQ">
-                                                <rect key="frame" x="93" y="37" width="41" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="93" y="37" width="44.333333333333343" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SUk-d6-0JB">
@@ -234,6 +236,8 @@
                         <outlet property="authorProfileImageView" destination="4vh-JR-Z8A" id="FmA-fX-aQz"/>
                         <outlet property="authorUsernameLabel" destination="4EV-rX-geQ" id="UOq-JY-CUE"/>
                         <outlet property="contentImageView" destination="SUk-d6-0JB" id="w5x-6q-DmE"/>
+                        <outlet property="parentView" destination="rU9-u1-0R9" id="P1O-LO-UBx"/>
+                        <outlet property="viewHeightConstraint" destination="DmP-u6-wAq" id="qgs-9k-siK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0N-aL-NEa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -262,15 +266,15 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhi-Pl-nKT">
-                                                <rect key="frame" x="93" y="10" width="41" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="93" y="10" width="44.333333333333343" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v4-E4-9pE">
-                                                <rect key="frame" x="93" y="37" width="41" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="93" y="37" width="44.333333333333343" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" systemColor="systemGray2Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uac-ph-fJF">
@@ -333,6 +337,8 @@
                         <outlet property="authorUsernameLabel" destination="7v4-E4-9pE" id="aSn-T8-6g6"/>
                         <outlet property="contentImageView" destination="a4F-Xu-VzP" id="Pgc-NN-mOi"/>
                         <outlet property="contentLabel" destination="uac-ph-fJF" id="hTA-Xs-hzw"/>
+                        <outlet property="parentView" destination="trA-Wb-djZ" id="c1Q-b4-Fzy"/>
+                        <outlet property="viewHeightConstraint" destination="xje-HK-EU1" id="I8g-Yw-sAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mge-lF-MkG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -343,6 +349,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

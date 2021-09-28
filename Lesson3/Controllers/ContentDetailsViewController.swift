@@ -15,5 +15,14 @@ class ContentDetailsViewController: PostDetailViewController {
         super.loadData(with: post)
         contentLabel.text = post?.content
         contentLabel.sizeToFit()
+        view.layoutIfNeeded()
+    }
+    
+    override func updateConstraint(_ constraint: NSLayoutConstraint) {
+        let headerHeight: CGFloat = 100
+        let contentHeight = contentLabel.frame.height
+        constraint.constant = max(constraint.constant,
+                                  headerHeight+contentHeight)
+        
     }
 }
