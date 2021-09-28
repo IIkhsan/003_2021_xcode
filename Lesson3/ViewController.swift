@@ -11,85 +11,84 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var students: [Student] = [Student(name: "Alex", groupNumber: "11-108"),
-                               .init(name: "Mikal", groupNumber: "11-205"),
-                               .init(name: "Bulat", groupNumber: "12-304"),
-                               .init(name: "Marat", groupNumber: "11-103")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
     }
-    
     private func configure() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.reloadData()
     }
-    
-    func navigation() {
-        
-    }
 }
-
-extension ViewController: StudentDetailViewControllerDelegate {
-    func onDataChange(student: Student) {
-        students.append(student)
+extension ViewController: ImageTextDetailViewControllerDelegate {
+    func onDataChange(publication: Publication) {
+        publications.append(publication)
         tableView.reloadData()
     }
 }
-
-extension ViewController: TableViewCellDelegate {
-    func didTapButton(student: Student, cell: UITableViewCell) {
-        guard let cellIndexPath = tableView.indexPath(for: cell) else { return }
-        students.remove(at: cellIndexPath.row)
-        students.insert(student, at: cellIndexPath.row)
-        tableView.reloadRows(at: [cellIndexPath], with: .bottom)
+extension ViewController: ImageDetailViewControllerDelegate {
+    func refreshTable() {
+        tableView.reloadData()
     }
 }
+extension ViewController: TextDetailViewControllerDelegate {
+}
+
   
 // MARK: - Table view data source & delegate
     
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return publications.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! TableViewCell
-        
-        cell.configure(student: students[indexPath.row], delegate: self)
-
-        return cell
+        let publication = publications[indexPath.row]
+        if publication.mainText != nil && publication.mainImage != nil {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextImageTableViewCell", for: indexPath) as? TextImageTableViewCell else { return UITableViewCell()}
+            cell.configure(publication: publications[indexPath.row]) //delegate
+            return cell
+        } else if publication.mainText == nil {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell", for: indexPath) as? ImageTableViewCell else { return UITableViewCell()}
+            cell.configure(publication: publications[indexPath.row]) //delegate
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextTableViewCell", for: indexPath) as? TextTableViewCell else { return UITableViewCell()}
+            cell.configure(publication: publications[indexPath.row]) //delegate
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        let publication = publications[indexPath.row]
+        if publication.mainImage == nil {
+            return 250
+        }
+        if publication.mainText == nil {
+            return 390
+        }
+        return 450
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let student = students[indexPath.row]
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "StudentDetailViewController") as! StudentDetailViewController
-        vc.student = student
-        navigationController?.pushViewController(vc, animated: true)
-//        performSegue(withIdentifier: "segueIdentifier", sender: student)
+        let publication = publications[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        if publication.mainImage != nil && publication.mainText != nil {
+            guard let imageTextViewController = storyboard?.instantiateViewController(withIdentifier: "ImageTextDetailViewController") as? ImageTextDetailViewController else {return}
+            imageTextViewController.delegate = self
+            imageTextViewController.publication = publication
+            navigationController?.pushViewController(imageTextViewController, animated: true)
+        } else if publication.mainText == nil {
+            guard let imageViewController = storyboard?.instantiateViewController(withIdentifier: "ImageDetailViewController") as? ImageDetailViewController else {return}
+            imageViewController.delegate = self
+            imageViewController.publication = publication
+            navigationController?.pushViewController(imageViewController, animated: true)
+        } else  {
+            guard let textViewController = storyboard?.instantiateViewController(withIdentifier: "TextDetailViewController") as? TextDetailViewController else {return}
+            textViewController.delegate = self
+            textViewController.publication = publication
+            navigationController?.pushViewController(textViewController, animated: true)
+        }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-        
-//        if segue.identifier == "segueIdentifier",
-//           let viewController = segue.destination as? StudentDetailViewController,
-//           let student = sender as? Student {
-//
-//            viewController.student = student
-//            viewController.delegate = self
-//        }
-    }
-    
 }
 
