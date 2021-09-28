@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct Student {
-    let name: String
-    var groupNumber: String
+struct Post {
+    let text: String
+    var image: UIImage
 }

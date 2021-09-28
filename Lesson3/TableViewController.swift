@@ -9,10 +9,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let students: [Student] = [Student(name: "Alex", groupNumber: "11-108"),
-                               .init(name: "Mikal", groupNumber: "11-205"),
-                               .init(name: "Bulat", groupNumber: "12-304"),
-                               .init(name: "Marat", groupNumber: "11-103")]
+    let posts: [Post] = [.init(text: "Александр Усик победил Энтони Джошуа и стал чемпионом мира в супертяжёлом Бой, прошедший в Лондоне, продлился все 12 раундов. Все трое судей отдали Усику - 117:112, 116:112, 115:113. Таким образом, Усик завоевал титул мира по версиям Всемирной боксёрской ассоциации (WBA), Всемирной боксёрской  (WBO), Международной федерации (IBF) и боксёрской организации (IBO) в супертяжёлом весе.", image: UIImage(named: "Image")!)]
     
     
     override func viewDidLoad() {
@@ -23,32 +20,16 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return posts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
-        cell.textLabel?.text = students[indexPath.row].name
-        cell.detailTextLabel?.text = students[indexPath.row].groupNumber
-        cell.imageView?.image = #imageLiteral(resourceName: "image1")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? TableViewCell else { return UITableViewCell()}
+                    
+        cell.descriptionLabel.text = posts[indexPath.row].text
+        cell.imagePost.image = posts[indexPath.row].image
 
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

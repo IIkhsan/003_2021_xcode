@@ -8,17 +8,17 @@
 import UIKit
 
 protocol StudentDetailViewControllerDelegate: AnyObject {
-    func onDataChange(student: Student)
+    func onDataChange(post: Post)
 }
 
 class StudentDetailViewController: UIViewController {
     
     // UI
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var groupNumberLabel: UILabel!
+    @IBOutlet weak var text: UILabel!
+    @IBOutlet weak var image: UIImage!
     
     // Properties
-    var student: Student?
+    var post: Post?
     weak var delegate: StudentDetailViewControllerDelegate?
 
     // - MARK: - View lifecycle
@@ -31,13 +31,12 @@ class StudentDetailViewController: UIViewController {
     
     // Private methods
     private func configure() {
-        guard var student = student else { return }
+        guard let post = post else { return }
         
-        nameLabel.text = student.name
-        groupNumberLabel.text = student.groupNumber
+        text.text = post.text
+        image = post.image
         
-        student.groupNumber = "11-805"
         
-        delegate?.onDataChange(student: student)
+        delegate?.onDataChange(post: post)
     }
 }

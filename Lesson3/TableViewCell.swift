@@ -8,38 +8,26 @@
 import UIKit
 
 protocol TableViewCellDelegate: AnyObject {
-    func didTapButton(student: Student, cell: UITableViewCell)
+    func didTapButton(post: Post, cell: UITableViewCell)
 }
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var studentNameLabel: UILabel!
-    @IBOutlet weak var groupNumberLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var imagePost: UIImageView!
     
-    var student: Student?
+    var post: Post?
     weak var delegate: TableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
     
-    func configure(student: Student, delegate: TableViewCellDelegate) {
-        studentNameLabel.text = student.name
-        groupNumberLabel.text = student.groupNumber
-        self.student = student
-        self.delegate = delegate
-    }
-    
-    @IBAction func didTapButton(_ sender: Any) {
-        guard var student = student else { return }
-        student.groupNumber = "13-123"
-        delegate?.didTapButton(student: student, cell: self)
-    }
-    
+//    func configure(post: Post, delegate: TableViewCellDelegate) {
+//        descriptionLabel.text = post.text
+//        imagePost = UIImageView(image: post.image)
+//        self.post = post
+//        self.delegate = delegate
+//    }
 }
