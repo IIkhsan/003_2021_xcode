@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Student {
-    let name: String
-    var groupNumber: String
+struct Post {
+    let username: String
+    var textpost: String?
+    var picture: UIImage?
 }

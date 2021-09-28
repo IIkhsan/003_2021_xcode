@@ -9,10 +9,10 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let students: [Student] = [Student(name: "Alex", groupNumber: "11-108"),
-                               .init(name: "Mikal", groupNumber: "11-205"),
-                               .init(name: "Bulat", groupNumber: "12-304"),
-                               .init(name: "Marat", groupNumber: "11-103")]
+    let posts: [Post] = [Post(username: "Alex", textpost: "hello", picture: UIImage(named: "image1")),
+                               .init(name: "Mikal", textpost: "hello", picture: UIImage(named: "image1")),
+                               .init(name: "Bulat", textpost: "hello", picture: UIImage(named: "image1")),
+                               .init(name: "Marat", textpost: "hello", picture: UIImage(named: "image1"))]
     
     
     override func viewDidLoad() {
@@ -28,15 +28,15 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return posts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
-        cell.textLabel?.text = students[indexPath.row].name
-        cell.detailTextLabel?.text = students[indexPath.row].groupNumber
-        cell.imageView?.image = #imageLiteral(resourceName: "image1")
+        cell.textLabel?.text = posts[indexPath.row].username
+        cell.detailTextLabel?.text = posts[indexPath.row].textpost
+        cell.imageView?.image = posts[indexPath.row].picture
 
         return cell
     }

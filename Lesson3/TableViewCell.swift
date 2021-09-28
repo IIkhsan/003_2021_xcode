@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TableViewCellDelegate: AnyObject {
-    func didTapButton(student: Student, cell: UITableViewCell)
+    func didTapButton(post: Post, cell: UITableViewCell)
 }
 
 class TableViewCell: UITableViewCell {
@@ -16,7 +16,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var studentNameLabel: UILabel!
     @IBOutlet weak var groupNumberLabel: UILabel!
     
-    var student: Student?
+    var post: Post?
     weak var delegate: TableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -29,17 +29,17 @@ class TableViewCell: UITableViewCell {
 
     }
     
-    func configure(student: Student, delegate: TableViewCellDelegate) {
-        studentNameLabel.text = student.name
-        groupNumberLabel.text = student.groupNumber
-        self.student = student
+    func configure(post: Post, delegate: TableViewCellDelegate) {
+        studentNameLabel.text = post.username
+        groupNumberLabel.text = post.textpost
+        self.post = post
         self.delegate = delegate
     }
     
     @IBAction func didTapButton(_ sender: Any) {
-        guard var student = student else { return }
-        student.groupNumber = "13-123"
-        delegate?.didTapButton(student: student, cell: self)
+        guard let post = post else { return }
+        //post.groupNumber = "13-123"
+        delegate?.didTapButton(post: post, cell: self)
     }
     
 }
