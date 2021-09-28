@@ -33,11 +33,18 @@ class TextTableViewCell: PostTableViewCell {
         dateLabel.text = post.date
         postTextLabel.text = post.text
         userImageView.image = post.author.accountImage
+        makeImageViewRound(image: userImageView)
     }
     
     @IBAction func didTapButton(_ sender: Any) {
          guard let post = post else { return }
          delegate?.didTapButton(post: post, cell: self)
      }
+    
+    func makeImageViewRound(image: UIImageView) {
+            image.layer.cornerRadius = image.frame.size.width / 2
+        image.clipsToBounds = true
+    }
+
 
 }

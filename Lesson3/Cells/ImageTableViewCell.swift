@@ -34,6 +34,8 @@ class ImageTableViewCell: PostTableViewCell {
         dateLabel.text = post.date
         userImageView.image = post.author.accountImage
         postImageView.image = post.postImage
+        makeImageViewRound(image: userImageView)
+
         
     }
     
@@ -41,5 +43,11 @@ class ImageTableViewCell: PostTableViewCell {
         guard let post = post else { return }
         delegate?.didTapButton(post: post, cell: self)
     }
+    
+    func makeImageViewRound(image: UIImageView) {
+            image.layer.cornerRadius = image.frame.size.width / 2
+        image.clipsToBounds = true
+    }
+
 
 }

@@ -40,5 +40,12 @@ class DetailViewController: UIViewController {
         userImageView.image = post.author.accountImage
         postImageView.image = post.postImage
         delegate?.onDataChange(post: post)
+        makeImageViewRound(image: userImageView)
     }
+    
+    func makeImageViewRound(image: UIImageView) {
+            image.layer.cornerRadius = image.frame.size.width / 2
+        image.clipsToBounds = true
+    }
+
 }
