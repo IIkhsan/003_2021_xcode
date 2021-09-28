@@ -36,4 +36,6 @@ class PostCell: UITableViewCell, PostCellDelegate {
         
     }
     
+    
+    
 }

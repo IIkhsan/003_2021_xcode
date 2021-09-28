@@ -16,7 +16,7 @@ struct PostManager {
     }
     
     static func generatePosts() -> [Post] {
-        let posts = (0...13).map { _ -> Post in
+        return (0...13).map { _ in
             let rand = Int.random(in: 0..<5)
             
             switch rand {
@@ -42,8 +42,6 @@ struct PostManager {
                     )
             }
         }
-        print(posts)
-        return posts
     }
     
     // list of all authors

@@ -75,6 +75,20 @@ class PostsViewController: UITableViewController {
         }
     }
     
+    // MARK: - Table view delegate methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = postManager.posts[indexPath.row]
+        switch post.type {
+            case .imageOnly:
+                performSegue(withIdentifier: K.goToImageOnly, sender: post)
+            case .contentOnly:
+                performSegue(withIdentifier: K.goToContentOnly, sender: post)
+            case .both:
+                performSegue(withIdentifier: K.goToBoth, sender: post)
+        }
+    }
+    
+    // MARK: - Table view helper functions
     private func getPostCell<T: UITableViewCell>(withIdentifier identifier: String,
                                                  for indexPath: IndexPath,
                                                  as type: T.Type) -> T? {
@@ -83,14 +97,13 @@ class PostsViewController: UITableViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? PostDetailViewController,
+              let sender = sender as? Post else { return }
+        vc.post = sender
+    }
+    
     
 }
