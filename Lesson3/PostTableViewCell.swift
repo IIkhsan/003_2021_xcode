@@ -27,14 +27,10 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func configure(avatarImage: String, name: String, postInfo: String, postImage: String, postText: String){
-        print(self.avatarImage)
         self.avatarImage.image = UIImage(named: avatarImage)
         nameLabel.text = name
         postInfoLabel.text = postInfo
         self.postImage.image = UIImage(named: postImage)
         postTextLabel.text = postText
-        if postText == "" {
-            postTextLabel.isHidden = true
-        }
     }
 }
