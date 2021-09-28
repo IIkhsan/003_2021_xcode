@@ -33,7 +33,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
+
         cell.textLabel?.text = students[indexPath.row].name
         cell.detailTextLabel?.text = students[indexPath.row].groupNumber
         cell.imageView?.image = #imageLiteral(resourceName: "image1")
