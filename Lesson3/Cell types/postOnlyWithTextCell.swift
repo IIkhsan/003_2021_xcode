@@ -7,17 +7,24 @@
 
 import UIKit
 
-class postOnlyWithTextCell: UITableViewCell {
+class PostOnlyWithTextCell: UITableViewCell {
 
+    
+    @IBOutlet weak var postWithText: UILabel!
+    
+    var post = Post(postImg: UIImage(), postText: "")
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configure(post: Post) {
+        self.post = post
+        self.postWithText.text = post.postText
     }
 
 }

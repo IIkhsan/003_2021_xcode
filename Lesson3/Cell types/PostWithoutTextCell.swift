@@ -10,6 +10,9 @@ import UIKit
 class PostWithoutTextCell: UITableViewCell {
 
     @IBOutlet weak var postImg: UIImageView!
+    
+    var post = Post(postImg: UIImage(), postText: "")
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -18,8 +21,8 @@ class PostWithoutTextCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func cofigure(post: Post){
-        self.postImg = post.postImg
+    func configure(post: Post) {
+        self.post = post
+        self.postImg.image = post.postImg
     }
-
 }

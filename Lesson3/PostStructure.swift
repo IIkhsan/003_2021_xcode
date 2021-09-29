@@ -9,6 +9,6 @@ import Foundation
 import UIKit
 
 struct Post {
-    let postImg: UIImageView
+    let postImg: UIImage
     let postText: String
 }

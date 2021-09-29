@@ -9,76 +9,80 @@ import UIKit
 
 class InstagramTableViewController: UITableViewController {
 
+    var sizeNumber: Int = 0
+    var images: [UIImage] = []
+    var posts:[UITableViewCell] = []
+    let typesOfPost = [ "postWithoutText", "postOnlyWithText", "postWithText"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        for i in 1...11 {
+            images.append(UIImage(named: "post_img_\(i)") ?? UIImage())
+        }
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return Int.random(in: 10...15)
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postWithoutText", for: indexPath)
-
-
-        return cell
+        let type = typesOfPost[Int.random(in: 0..<typesOfPost.count)]
+        switch type {
+        case "postWithoutText":
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: type, for: indexPath) as? PostWithoutTextCell else { return UITableViewCell()}
+            sizeNumber = 600
+            cell.configure(post: Post(postImg: images[Int.random(in: 0..<images.count)], postText: Text.getText()))
+            return cell
+        case "postWithText":
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: type, for: indexPath) as? PostWithTextCell else { return UITableViewCell()}
+            sizeNumber = 700
+            cell.configure(post: Post(postImg: images[Int.random(in: 0..<images.count)], postText: Text.getText()))
+            return cell
+        case "postOnlyWithText":
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: type, for: indexPath) as? PostOnlyWithTextCell else { return UITableViewCell()}
+            sizeNumber = 200
+            cell.configure(post: Post(postImg: images[Int.random(in: 0..<images.count)], postText: Text.getText()))
+            return cell
+        default:
+            return UITableViewCell()
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 600
+        return CGFloat(sizeNumber)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ImageAndTextSegue", sender: tableView.cellForRow(at: indexPath))
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "ImageAndTextSegue",
+            let viewController = segue.destination as? ImageAndTextViewController,
+                let postInf = sender as? PostWithTextCell {
+                    let post = postInf.post
+            viewController.imgSegue = post.postImg
+            viewController.textSegue = post.postText
+                }
 
+        if segue.identifier == "ImageSegue",
+            let viewController = segue.destination as? ImageViewController,
+                let postInf = sender as? PostWithoutTextCell {
+                    let post = postInf.post
+            viewController.imgSegue = post.postImg
+                }
+
+        if segue.identifier == "TextSegue",
+            let viewController = segue.destination as? TextViewController,
+                let postInf = sender as? PostOnlyWithTextCell {
+                    let post = postInf.post
+            viewController.textSegue = post.postText
+                }
+    }
 }
