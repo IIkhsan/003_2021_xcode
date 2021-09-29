@@ -24,7 +24,7 @@ class CustomTableViewCell: UITableViewCell {
         imageOfPost.image = UIImage(named: imagePost)
         someTextLabel.text = text
         textOfPost.text = messageText
-        avatarImage.layer.cornerRadius = 20
+        avatarImage.layer.cornerRadius = avatarImage.frame.size.height / 2 
     }
 
 }
