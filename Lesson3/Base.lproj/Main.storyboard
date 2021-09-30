@@ -48,10 +48,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="svJ-2a-gCm"/>
+                    <connections>
+                        <segue destination="7S3-4P-HXi" kind="push" id="Nmz-yz-tCy"/>
+                        <segue destination="Em3-Dv-KR8" kind="push" id="mcn-Lw-teT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GI-6U-wOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-68.115942028985515" y="-754.01785714285711"/>
+            <point key="canvasLocation" x="-55.072463768115945" y="-754.01785714285711"/>
+        </scene>
+        <!--ImageScreen-->
+        <scene sceneID="CHu-Ek-Xp6">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ImagePostViewController" id="7S3-4P-HXi" userLabel="ImageScreen" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="l0B-Fa-Evd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Bl-Rn-uYv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="623" y="-793"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sBV-oY-eZw">
@@ -68,6 +82,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIi-lP-ZOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1023" y="-754"/>
+        </scene>
+        <!--TextScreen-->
+        <scene sceneID="hOj-DD-eYi">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TextPostViewController" id="Em3-Dv-KR8" userLabel="TextScreen" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Xmk-uw-xEQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0v4-cP-Fok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="633" y="-695"/>
         </scene>
     </scenes>
     <resources>
