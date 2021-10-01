@@ -12,9 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var posts: [Post] = [
-        Post.init(author: User.init(userName: "DUNE", accountName: "dunemovie", accountImage: #imageLiteral(resourceName: "duneAccountImage")), text: "it's time. #DuneMovie coming October 22.", postImage: #imageLiteral(resourceName: "dunePostImage"), date: "4 oct 2021"),
-        .init(author: User.init(userName: "Netflix", accountName: "netflix", accountImage: #imageLiteral(resourceName: "netflixAccountImage")), text: "A new look at ‘STRANGER THINGS’ Season 4.", postImage: nil, date: "5 sep 2021"),
-        .init(author: User.init(userName: "Cats", accountName: "cats", accountImage: #imageLiteral(resourceName: "catsAccountImage")), text: nil, postImage: #imageLiteral(resourceName: "catPostImage"), date: "21 sep 2020")]
+        Post.init(author: User.init(userName: "DUNE", accountName: "@dunemovie", accountImage: #imageLiteral(resourceName: "duneAccountImage")), text: "it's time. #DuneMovie coming October 22.", postImage: #imageLiteral(resourceName: "dunePostImage"), date: "4 oct 2021"),
+        .init(author: User.init(userName: "Netflix", accountName: "@netflix", accountImage: #imageLiteral(resourceName: "netflixAccountImage")), text: "A new look at ‘STRANGER THINGS’ Season 4.", postImage: nil, date: "5 sep 2021"),
+        .init(author: User.init(userName: "Cats", accountName: "@cats", accountImage: #imageLiteral(resourceName: "catsAccountImage")), text: nil, postImage: #imageLiteral(resourceName: "catPostImage"), date: "21 sep 2020")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,6 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
-        tableView.register(ImageTableViewCell.self, forCellReuseIdentifier: "ImageTableViewCell" )
-        tableView.register(ImageTextTableViewCell.self, forCellReuseIdentifier: "ImageTextTableViewCell" )
-        tableView.register(TextTableViewCell.self, forCellReuseIdentifier: "TextTableViewCell" )
     }
 }
 
@@ -80,9 +77,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return 200
         }
         if post.text == nil {
-            return 400
+            return 300
         }
-        return 500
+        return 350
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
