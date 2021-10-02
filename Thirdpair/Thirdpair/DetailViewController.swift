@@ -9,15 +9,14 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var avatar: UIImageView!
-    
+    //MARK:- LABELS
     @IBOutlet weak var nameHowPost: UILabel!
-    
     @IBOutlet weak var textOfPost: UILabel!
-    
-    @IBOutlet weak var imageOfPost: UIImageView!
-    
     @IBOutlet weak var daeOfPost: UILabel!
+    
+    //MARK:- IMAGE VIEW
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var imageOfPost: UIImageView!
     
     var post: Post?
     

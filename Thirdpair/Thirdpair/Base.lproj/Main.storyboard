@@ -50,7 +50,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вчера" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNM-qG-wcn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNM-qG-wcn">
                                                     <rect key="frame" x="98" y="48" width="306" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -77,6 +77,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="avatarImage" destination="XyD-IZ-sVK" id="xUd-pj-k20"/>
+                                            <outlet property="dateOfPostLabel" destination="uNM-qG-wcn" id="1XI-YH-OPm"/>
                                             <outlet property="imageOfPost" destination="9RB-zv-PfZ" id="fla-a8-vPy"/>
                                             <outlet property="someTextLabel" destination="G2X-KK-Ben" id="kVx-Ez-Z9s"/>
                                             <outlet property="textLabel" destination="G2X-KK-Ben" id="ni7-im-gSy"/>
