@@ -27,6 +27,6 @@ class DetailViewController: UIViewController {
         nameHowPost.text = post?.name
         textOfPost.text = post?.textOfPost
         imageOfPost.image = UIImage(named: post?.imageOfOfPost ?? "")
-        daeOfPost.text = "вчера"
+        daeOfPost.text = post?.datePost
     }
 }
