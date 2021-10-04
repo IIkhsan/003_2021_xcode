@@ -36,6 +36,9 @@ class PostTableViewCell: UITableViewCell {
         pubTimeLabel.text = post.publishingTime
         descriptionTextView.text = post.description
         postPicImageView.image = post.pinnedPics[0]
+        postPicImageView2.image = nil
+        postPicImageView3.image = nil
+        postPicImageView4.image = nil
         if post.pinnedPics.count > 1 {
             postPicImageView2.image = post.pinnedPics[1]
         }
