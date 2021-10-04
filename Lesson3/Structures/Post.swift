@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct Post {
-    var content: String
+    var content: String?
     var contentImage: UIImage?
     var authorImage: UIImage
     var authorName: String

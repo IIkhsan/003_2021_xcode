@@ -1,5 +1,12 @@
 //
-//  PostWithoutImageTableViewCell.swift
+//  PostTableViewCell.swift
+//  Lesson3
+//
+//  Created by Ильдар Арсламбеков on 04.10.2021.
+//
+
+//
+//  PostWithImageTableViewCell.swift
 //  Lesson3
 //
 //  Created by Ильдар Арсламбеков on 24.09.2021.
@@ -7,23 +14,27 @@
 
 import UIKit
 
-class PostWithoutImageTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
     
     //MARK: Properties
-    let layerManager = LayerManager()
     var post: Post?
-    weak var delegate: PostTableViewCellDelegate?
+    let layerManager = LayerManager()
     var isLikePressed = false
+    weak var delegate: PostTableViewCellDelegate?
+
         
-    //MARK: IBOutlets
+    //MARK: IB Outlets
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var likeCountLabel: UILabel!
     
-    //MARK: IBActions
+    @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var contentLabel: UILabel!
+    
+    //MARK: IB Actions
+    
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         isLikePressed = !isLikePressed
         if isLikePressed {
@@ -35,9 +46,9 @@ class PostWithoutImageTableViewCell: UITableViewCell {
             likeButton.setImage(UIImage(named: "like"), for: .normal)
             post?.likesCount -= 1
         }
-        likesCountLabel.text = post?.likesCount.description
+        likeCountLabel.text = post?.likesCount.description
     }
-    
+
     //MARK: Cell methods
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,14 +65,6 @@ class PostWithoutImageTableViewCell: UITableViewCell {
         layerManager.makeViewRounded(view: authorImageView)
     }
     
-    public func makeViewRounded(view: UIImageView) {
-        view.layer.borderWidth = 1
-           view.layer.masksToBounds = false
-           view.layer.borderColor = UIColor.black.cgColor
-           view.layer.cornerRadius = view.frame.height/2
-           view.clipsToBounds = true
-    }
-    
     private func display(post: Post) {
         authorImageView.image = post.authorImage
         authorNameLabel.text = post.authorName
@@ -69,6 +72,7 @@ class PostWithoutImageTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "YY, MMM d"
         dateLabel.text = dateFormatter.string(from: post.date)
         contentLabel.text = post.content
-        likesCountLabel.text = post.likesCount.description
+        contentImageView.image = post.contentImage
+        likeCountLabel.text = post.likesCount.description
     }
 }

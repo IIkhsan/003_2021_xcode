@@ -17,9 +17,9 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         posts = dataManager.generateArrayOfPosts(count: 28)
-        tableView.register(UINib.init(nibName: "PostWithoutImageTableViewCell", bundle: nil), forCellReuseIdentifier: "postWithoutImage")
-        tableView.register(UINib.init(nibName: "PostWithImageTableViewCell", bundle: nil), forCellReuseIdentifier: "postWithImage")
-        tableView.estimatedRowHeight = 512
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib.init(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postCell")
         tableView.rowHeight = UITableView.automaticDimension
     }
 
@@ -33,22 +33,9 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let post = posts[indexPath.row]
-        if post.contentImage == nil {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "postWithoutImage") as? PostWithoutImageTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.delegate = self
-            cell.configure(post: post)
-            return cell
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "postWithImage") as? PostWithImageTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.delegate = self
-            cell.configure(post: post)
-            return cell
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostTableViewCell else { return UITableViewCell() }
+        cell.configure(post: posts[indexPath.row])
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
