@@ -57,8 +57,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     // Было бы хорошо сделать 2 конструктора для поста (первый для ячеек с текстом, второй - для ячеек без текста), но так как задание требует несколько видов ячеек, пришлось подгонять сами посты под ячейки
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        print(cells[indexPath.row])
-        print(posts[indexPath.row].shortText)
         
         if cells[indexPath.row] is CustomTableViewCell{
             let vc = sb.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
