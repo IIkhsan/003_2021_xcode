@@ -16,7 +16,7 @@ class LentaViewController: UIViewController {
                                                          groupImage: UIImage(named: "IMG_7611") ?? UIImage(),
                                                          publishingTime: "24 сен в 12:22 АМ",
                                                          pinnedPics: [UIImage(named: "IMG_7608") ?? UIImage(), UIImage(named: "IMG_7606") ?? UIImage(), UIImage(named:"IMG_7609") ?? UIImage(), UIImage(named:"IMG_76110") ?? UIImage()]),
-                                      SinglePostCellData(groupName: "на дальней станции сойду",
+                                      SinglePostCellData(groupName: "на дальней станции",
                                                          description: "железная дорога через озеро в алтайском крае.",
                                                          groupImage: UIImage(named: "IMG_7613") ?? UIImage(),
                                                          publishingTime: "23 мая в 9:57 АМ",
