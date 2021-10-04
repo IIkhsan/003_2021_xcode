@@ -39,11 +39,3 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-struct Post {
-    let nameOfPost: String
-    let postInfo: String
-    let avatarImagePost: String
-    let postText: String
-    let structPostImage: String
-}
-

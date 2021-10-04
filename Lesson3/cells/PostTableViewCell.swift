@@ -27,10 +27,14 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func configure(avatarImage: String, name: String, postInfo: String, postImage: String, postText: String){
+        if postImage == "" {
+            self.postImage.image = nil
+        } else {
+            self.postImage.image = UIImage(named: postImage)
+        }
         self.avatarImage.image = UIImage(named: avatarImage)
         nameLabel.text = name
         postInfoLabel.text = postInfo
-        self.postImage.image = UIImage(named: postImage)
         postTextLabel.text = postText
     }
 }
