@@ -17,10 +17,8 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         posts = dataManager.generateArrayOfPosts(count: 28)
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib.init(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postCell")
-        tableView.rowHeight = UITableView.automaticDimension
+        configureTable()
+
     }
 
     // MARK: - Table view methods
@@ -40,6 +38,12 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "postDetailShow", sender: indexPath)
+    }
+    
+    private func configureTable() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib.init(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postCell")
     }
     
     //MARK: Segue

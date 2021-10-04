@@ -94,13 +94,6 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		7482A5D626FF2719004DD8E2 /* Xibs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Xibs;
-			sourceTree = "<group>";
-		};
 		7482A5D726FF274E004DD8E2 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +114,6 @@
 		7482A5D926FF2799004DD8E2 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7482A5D626FF2719004DD8E2 /* Xibs */,
 				74F3DD14270ADBD800C7349C /* PostTableViewCell.swift */,
 				74F3DD15270ADBD800C7349C /* PostTableViewCell.xib */,
 			);
