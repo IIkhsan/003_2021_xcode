@@ -18,7 +18,6 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         posts = dataManager.generateArrayOfPosts(count: 28)
         configureTable()
-
     }
 
     // MARK: - Table view methods

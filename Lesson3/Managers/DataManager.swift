@@ -32,13 +32,17 @@ class DataManager {
         }
         return post
     }
-    
+        
     public func generateArrayOfPosts(count: Int) -> [Post] {
         var posts: [Post] = []
         for _ in 0..<count {
             posts.append(generatePost())
         }
         return posts
+    }
+    
+    public func generateUser() -> User {
+        return User(avatarImage: avatarImages.randomElement()!, name: names.randomElement()!, city: "Kazan", phoneNumber: "+89083902021", friendsCount: Int.random(in: 14..<200), subscribersCount: Int.random(in: 14..<200))
     }
 }
 
