@@ -42,7 +42,7 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-Hj-B43">
                                 <rect key="frame" x="20" y="737" width="374" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Переведено с английского языка.-Произвол - это качество того, что «определяется случайностью, прихотью или побуждением, а не необходимостью, разумом или принципом». </string>
                                 <color key="textColor" systemColor="labelColor"/>
