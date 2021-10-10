@@ -24,7 +24,7 @@ class TableViewCellTimeline: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView! {
         didSet {
-            avatarImageView.maskCircle()
+            avatarImageView.makeRoundAvatar()
             avatarImageView.layer.borderColor = UIColor.black.cgColor
             avatarImageView.layer.borderWidth = 0.8
         }
@@ -33,20 +33,28 @@ class TableViewCellTimeline: UITableViewCell {
     func prepareCell(post: Post) {
         avatarImageView.image = post.authorImage
         nicknameLabel.text = post.author
-        textOfPost.textContainer.maximumNumberOfLines = 2
-        textOfPost.text = post.description
-        guard  let image = post.image
-        else  {
-            return
+        textOfPost.textContainer.maximumNumberOfLines = 5
+      
+        if let image = post.image {
+            postImageView.image = image
         }
-        postImageView.image = image
+//        else  {
+//            postImageView.isHidden = true
+//        }
+        
+        if post.description != nil {
+            textOfPost.text = post.description
+        }
+        else {
+            textOfPost.isHidden = true
+        }
 
     }
     
 }
 
 extension UIImageView {
-    func maskCircle() {
+    func makeRoundAvatar() {
         self.contentMode = UIView.ContentMode.scaleAspectFill
         self.layer.cornerRadius = self.frame.height / 2
         self.layer.masksToBounds = false

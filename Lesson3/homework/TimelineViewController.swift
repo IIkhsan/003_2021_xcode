@@ -43,9 +43,9 @@ class TimelineViewController: UIViewController, PostDetailViewControllerDelegate
 
         
         posts = [Post(author: names.randomElement()!, authorImage: UIImage(named: images.randomElement()!)!, image: nil, description: descriptions.randomElement()!),
-            Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: descriptions.randomElement()!),
-            
-            Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: descriptions.randomElement()!)
+                 Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description:descriptions.randomElement()!),
+            Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: "Кто такие айтишники? 💻 Наверное, каждый слышал это слово и сам не раз применял в отношении человека, который, так и ли иначе, связан с компьютерами. Но есть множество разных профессий в сфере ИТ - разработчики, аналитики, системные администраторы, тестировщики и т.д. Объясняем в новом выпуске программы Мастера чем отличаются и чем схожи все эти профессии и кто же всё-таки такие айтишники В съемках приняли участие: Михаил Абрамский, директор ИТИС, Булат Ганиев, управляющий партнер компании Технократия С нас стартовал новый сезон программы, она выходит каждую субботу на тк Россияи, похоже, что одним выпуском с нами сезон не ограничится! Увидимся еще😉 "),
+            Post(author: names.randomElement()!, authorImage:UIImage(named:  images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: nil)
             ]
         
     }
@@ -69,8 +69,6 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier, for: indexPath) as! TableViewCellTimeline
         
         let model = posts[indexPath.row]
-        
-        
         cell.prepareCell(post: model)
         return cell
     }
@@ -84,9 +82,9 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if posts[indexPath.row].image == nil {
-            return 150
+            return 200
         }
-        return 500
+        return 400
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

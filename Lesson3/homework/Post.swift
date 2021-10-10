@@ -12,5 +12,5 @@ struct Post {
     let author: String
     let authorImage: UIImage
     var image: UIImage?
-    var description: String
+    var description: String?
 }

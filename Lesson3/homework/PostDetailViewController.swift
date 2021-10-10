@@ -17,13 +17,13 @@ class PostDetailViewController: UIViewController {
     var post: Post?
     weak var delegate: PostDetailViewControllerDelegate?
 
+    @IBOutlet weak var stackView: UIStackView!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UILabel! {
         didSet {
            
             descriptionTextView.backgroundColor = .systemGray
-//            descriptionTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
             descriptionTextView.backgroundColor = .systemGray
         }
     }
@@ -36,7 +36,7 @@ class PostDetailViewController: UIViewController {
     
     @IBOutlet weak var avatarImageView: UIImageView! {
         didSet {
-            avatarImageView.maskCircle()
+            avatarImageView.makeRoundAvatar()
             avatarImageView.layer.borderColor = UIColor.black.cgColor
             avatarImageView.layer.borderWidth = 0.8
         }
@@ -53,8 +53,19 @@ class PostDetailViewController: UIViewController {
         
         nicknameLabel.text = post.author
         avatarImageView.image = post.authorImage
-        descriptionTextView.text = post.description
-        imageView.image = post.image
+       
+        if post.description != nil {
+            descriptionTextView.text = post.description
+        } else {
+            descriptionTextView.isHidden = true
+        }
+        
+        if let image = post.image {
+            imageView.image = image
+        }
+        else {
+            imageView.isHidden = true
+        }
         
         view.backgroundColor = .systemGray
         
@@ -62,10 +73,7 @@ class PostDetailViewController: UIViewController {
         descriptionTextView.frame.size.width = 1000
 
         descriptionTextView.sizeToFit()
-        
-       
-        
-        delegate?.onDataChange(post: post)
+//        delegate?.onDataChange(post: post)
     }
 
     /*
