@@ -7,24 +7,23 @@
 
 import UIKit
 
-class EnterViewController: UIViewController {
+class LogInViewController: UIViewController {
     
     //MARK: IBOutlets
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var promptLabel: UILabel!
+    @IBOutlet weak var logInView: LogInView!
     
     //MARK: IBActions
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        if loginTextField.text == "admin" && passwordTextField.text == "admin" {
+        if logInView.loginTextField.text == "admin" && logInView.passwordTextField.text == "admin" {
             performSegue(withIdentifier: "enter", sender: nil)
         } else {
-            promptLabel.isHidden = false
+            logInView.promptLabel.isHidden = false
         }
     }
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        promptLabel.isHidden = true
+        logInView.promptLabel.isHidden = true
     }
 }

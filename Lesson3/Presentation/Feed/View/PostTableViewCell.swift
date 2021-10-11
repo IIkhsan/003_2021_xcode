@@ -29,12 +29,10 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeCountLabel: UILabel!
-    
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     
     //MARK: IB Actions
-    
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         isLikePressed = !isLikePressed
         if isLikePressed {
