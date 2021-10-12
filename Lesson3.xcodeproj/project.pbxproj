@@ -16,7 +16,6 @@
 		D25362D826FE4D2B006CC994 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25362D626FE4D2B006CC994 /* TextTableViewCell.xib */; };
 		D25362DB26FE4D3C006CC994 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25362D926FE4D3C006CC994 /* ImageTableViewCell.swift */; };
 		D25362DC26FE4D3C006CC994 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D25362DA26FE4D3C006CC994 /* ImageTableViewCell.xib */; };
-		D25362E126FE53FD006CC994 /* TableViewCellDeleagte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25362E026FE53FD006CC994 /* TableViewCellDeleagte.swift */; };
 		D284FCBB26FFA4B9000EFF4A /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D284FCBA26FFA4B9000EFF4A /* Configurable.swift */; };
 		D2A86D1D26FB7EE100C7CF5B /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A86D1C26FB7EE100C7CF5B /* NewsViewController.swift */; };
 		D2A86D2026FB7F1F00C7CF5B /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A86D1E26FB7F1F00C7CF5B /* PostTableViewCell.swift */; };
@@ -255,7 +254,6 @@
 				D2A86D1D26FB7EE100C7CF5B /* NewsViewController.swift in Sources */,
 				D2A86D2D26FBB12500C7CF5B /* DataManager.swift in Sources */,
 				5E0B808C26FA2BAE00F7BB92 /* AppDelegate.swift in Sources */,
-				D25362E126FE53FD006CC994 /* TableViewCellDeleagte.swift in Sources */,
 				D2A86D2626FB8BA500C7CF5B /* User.swift in Sources */,
 				D2CDAA9526FE66E700576B1D /* DetailedTextViewController.swift in Sources */,
 				D2A86D2826FBA6AE00C7CF5B /* DetailedPostViewController.swift in Sources */,
@@ -411,7 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lesson3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -430,7 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 939KD425D9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Lesson3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
