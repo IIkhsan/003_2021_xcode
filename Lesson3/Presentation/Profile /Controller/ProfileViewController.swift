@@ -27,10 +27,10 @@ class ProfileViewController: UIViewController {
     //MARK: - Private functions
     private func configureProfileView() {
         profileView.configureProfileHeaderView(user: profileModel.user)
-        profileView.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postCell")
     }
     
     private func configureTableView() {
+        profileView.tableView.register(UINib(nibName: "PostTableViewCell", bundle: nil), forCellReuseIdentifier: "postCell")
         profileView.tableView.delegate = self
         profileView.tableView.dataSource = self
     }
@@ -72,5 +72,6 @@ extension ProfileViewController: UITableViewDelegate {
 extension ProfileViewController: FeedModelDelegate {
     func dataUpdated() {
         profileView.tableView.reloadData()
+        configureProfileView()
     }
 }
