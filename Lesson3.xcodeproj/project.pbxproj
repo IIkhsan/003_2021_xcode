@@ -11,6 +11,7 @@
 		5E0B808E26FA2BAE00F7BB92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B808D26FA2BAE00F7BB92 /* SceneDelegate.swift */; };
 		5E0B809526FA2BAF00F7BB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B809426FA2BAF00F7BB92 /* Assets.xcassets */; };
 		5E0B809826FA2BAF00F7BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B809626FA2BAF00F7BB92 /* LaunchScreen.storyboard */; };
+		7405F4E12716BE2C002BFD13 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7405F4E02716BE2C002BFD13 /* DetailModel.swift */; };
 		741AA34A271448180012109B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741AA349271448180012109B /* FeedView.swift */; };
 		741AA34C2714498D0012109B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741AA34B2714498D0012109B /* FeedViewController.swift */; };
 		7421E5C126FE4BB900BE84D8 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7421E5BF26FE4BB900BE84D8 /* DetailPostViewController.swift */; };
@@ -18,6 +19,9 @@
 		7473E50327142267007133F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473E50227142267007133F8 /* ProfileViewController.swift */; };
 		7473E5052714297A007133F8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473E5042714297A007133F8 /* DetailView.swift */; };
 		7473E50927142CEA007133F8 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473E50827142CEA007133F8 /* LogInView.swift */; };
+		747875E02716C29600CE85D0 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747875DF2716C29600CE85D0 /* ProfileModel.swift */; };
+		747875E22716C55400CE85D0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747875E12716C55400CE85D0 /* DataService.swift */; };
+		74AEEC0E2717086C00104BA5 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AEEC0D2717086C00104BA5 /* LogInModel.swift */; };
 		74B38E6027141008008A7D6F /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74B38E5F27141008008A7D6F /* Feed.storyboard */; };
 		74B38E6427141063008A7D6F /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74B38E6327141063008A7D6F /* LogIn.storyboard */; };
 		74B38E6727141427008A7D6F /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74B38E6627141427008A7D6F /* Detail.storyboard */; };
@@ -26,8 +30,10 @@
 		74C841E126FE038000208511 /* LayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C841E026FE038000208511 /* LayerManager.swift */; };
 		74C841E326FE0CDE00208511 /* DelegateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C841E226FE0CDE00208511 /* DelegateProtocols.swift */; };
 		74D2A78426FDC22800193B26 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2A78326FDC22800193B26 /* Post.swift */; };
-		74D2A79426FDD46500193B26 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2A79326FDD46500193B26 /* DataManager.swift */; };
+		74D2A79426FDD46500193B26 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2A79326FDD46500193B26 /* DataGenerator.swift */; };
 		74E7C08F270D8CF80094C2DC /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E7C08E270D8CF80094C2DC /* LogInViewController.swift */; };
+		74E9C0202716FD4800B4EB1A /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9C01F2716FD4800B4EB1A /* FeedModel.swift */; };
+		74E9C0232717014D00B4EB1A /* FeedModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9C0222717014D00B4EB1A /* FeedModelDelegate.swift */; };
 		74F3DD16270ADBD800C7349C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F3DD14270ADBD800C7349C /* PostTableViewCell.swift */; };
 		74F3DD17270ADBD800C7349C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F3DD15270ADBD800C7349C /* PostTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -39,6 +45,7 @@
 		5E0B809426FA2BAF00F7BB92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E0B809726FA2BAF00F7BB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E0B809926FA2BAF00F7BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7405F4E02716BE2C002BFD13 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		741AA349271448180012109B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		741AA34B2714498D0012109B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		7421E5BF26FE4BB900BE84D8 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +53,9 @@
 		7473E50227142267007133F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7473E5042714297A007133F8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7473E50827142CEA007133F8 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		747875DF2716C29600CE85D0 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		747875E12716C55400CE85D0 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		74AEEC0D2717086C00104BA5 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 		74B38E5F27141008008A7D6F /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		74B38E6327141063008A7D6F /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		74B38E6627141427008A7D6F /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -54,8 +64,10 @@
 		74C841E026FE038000208511 /* LayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerManager.swift; sourceTree = "<group>"; };
 		74C841E226FE0CDE00208511 /* DelegateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProtocols.swift; sourceTree = "<group>"; };
 		74D2A78326FDC22800193B26 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		74D2A79326FDD46500193B26 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		74D2A79326FDD46500193B26 /* DataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
 		74E7C08E270D8CF80094C2DC /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		74E9C01F2716FD4800B4EB1A /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		74E9C0222717014D00B4EB1A /* FeedModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModelDelegate.swift; sourceTree = "<group>"; };
 		74F3DD14270ADBD800C7349C /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		74F3DD15270ADBD800C7349C /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +117,14 @@
 			path = Lesson3;
 			sourceTree = "<group>";
 		};
+		7405F4DF2716BDF6002BFD13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7405F4E02716BE2C002BFD13 /* DetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		741C8FE52711C1B20015B8F1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +148,8 @@
 		741C8FE72711C24D0015B8F1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				74D2A79326FDD46500193B26 /* DataGenerator.swift */,
+				747875E12716C55400CE85D0 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -168,10 +190,17 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		747875DE2716C27800CE85D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				747875DF2716C29600CE85D0 /* ProfileModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7482A5D526FF26F7004DD8E2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				74D2A79326FDD46500193B26 /* DataManager.swift */,
 				74C841E026FE038000208511 /* LayerManager.swift */,
 			);
 			path = Managers;
@@ -203,6 +232,8 @@
 		74B38E5E27140FE6008A7D6F /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				74E9C0212717013400B4EB1A /* DelegateProtocols */,
+				74E9C01E2716FD3600B4EB1A /* Model */,
 				7473E50B27142EC3007133F8 /* Controllers */,
 				7473E50A27142EB9007133F8 /* View */,
 			);
@@ -212,6 +243,7 @@
 		74B38E6127141025008A7D6F /* Log In */ = {
 			isa = PBXGroup;
 			children = (
+				74E9C01B2716EB5600B4EB1A /* Model */,
 				7473E50727142CA9007133F8 /* Controllers */,
 				7473E50627142C9E007133F8 /* View */,
 			);
@@ -221,6 +253,7 @@
 		74B38E6227141030008A7D6F /* Profile  */ = {
 			isa = PBXGroup;
 			children = (
+				747875DE2716C27800CE85D0 /* Model */,
 				74B38E6F27141606008A7D6F /* Controller */,
 				74B38E6D271415F1008A7D6F /* View */,
 			);
@@ -230,6 +263,7 @@
 		74B38E652714138F008A7D6F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				7405F4DF2716BDF6002BFD13 /* Model */,
 				74B38E6B2714158D008A7D6F /* Controllers */,
 				74B38E6A2714157F008A7D6F /* View */,
 			);
@@ -268,6 +302,30 @@
 				7473E50227142267007133F8 /* ProfileViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		74E9C01B2716EB5600B4EB1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74AEEC0D2717086C00104BA5 /* LogInModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74E9C01E2716FD3600B4EB1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74E9C01F2716FD4800B4EB1A /* FeedModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74E9C0212717013400B4EB1A /* DelegateProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				74E9C0222717014D00B4EB1A /* FeedModelDelegate.swift */,
+			);
+			path = DelegateProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,18 +404,24 @@
 			files = (
 				74C841E326FE0CDE00208511 /* DelegateProtocols.swift in Sources */,
 				74B38E71271416FC008A7D6F /* ProfileView.swift in Sources */,
-				74D2A79426FDD46500193B26 /* DataManager.swift in Sources */,
+				74D2A79426FDD46500193B26 /* DataGenerator.swift in Sources */,
 				74C841E126FE038000208511 /* LayerManager.swift in Sources */,
+				74E9C0202716FD4800B4EB1A /* FeedModel.swift in Sources */,
 				7473E50327142267007133F8 /* ProfileViewController.swift in Sources */,
 				5E0B808C26FA2BAE00F7BB92 /* AppDelegate.swift in Sources */,
+				747875E22716C55400CE85D0 /* DataService.swift in Sources */,
 				74E7C08F270D8CF80094C2DC /* LogInViewController.swift in Sources */,
+				74E9C0232717014D00B4EB1A /* FeedModelDelegate.swift in Sources */,
 				5E0B808E26FA2BAE00F7BB92 /* SceneDelegate.swift in Sources */,
 				7421E5C126FE4BB900BE84D8 /* DetailPostViewController.swift in Sources */,
+				747875E02716C29600CE85D0 /* ProfileModel.swift in Sources */,
 				741AA34C2714498D0012109B /* FeedViewController.swift in Sources */,
 				742E97C2270DAD86003AAC1D /* User.swift in Sources */,
+				74AEEC0E2717086C00104BA5 /* LogInModel.swift in Sources */,
 				741AA34A271448180012109B /* FeedView.swift in Sources */,
 				74D2A78426FDC22800193B26 /* Post.swift in Sources */,
 				7473E5052714297A007133F8 /* DetailView.swift in Sources */,
+				7405F4E12716BE2C002BFD13 /* DetailModel.swift in Sources */,
 				7473E50927142CEA007133F8 /* LogInView.swift in Sources */,
 				74F3DD16270ADBD800C7349C /* PostTableViewCell.swift in Sources */,
 			);

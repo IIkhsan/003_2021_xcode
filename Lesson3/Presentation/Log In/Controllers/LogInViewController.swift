@@ -9,12 +9,15 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    //MARK: - Properties
+    var logInModel = LogInModel()
+    
     //MARK: IBOutlets
     @IBOutlet weak var logInView: LogInView!
     
     //MARK: IBActions
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        if logInView.loginTextField.text == "admin" && logInView.passwordTextField.text == "admin" {
+        if logInModel.isValid(login: logInView.loginTextField.text ?? "", password: logInView.passwordTextField.text ?? "") {
             performSegue(withIdentifier: "enter", sender: nil)
         } else {
             logInView.promptLabel.isHidden = false

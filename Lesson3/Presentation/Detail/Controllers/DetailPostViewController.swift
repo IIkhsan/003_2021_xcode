@@ -9,15 +9,20 @@ import UIKit
 
 class DetailPostViewController: UIViewController {
     
-    //MARK: - Properties
-    var post: Post?
+    //MARK: - Model
+    var detailModel: DetailModel = DetailModel()
     
     //MARK: - IBOutlets
-    @IBOutlet var detailView: DetailView!
+    @IBOutlet weak var detailView: DetailView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        detailView.configure(post: post)
+        detailView.configure(post: detailModel.post)
+    }
+    
+    //MARK: - Functions
+    public func configure(post: Post) {
+        detailModel.post = post
     }
 }

@@ -11,5 +11,5 @@ class FeedView: UIView {
 
     //MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
-    
+
 }

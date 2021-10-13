@@ -21,7 +21,7 @@ class ProfileView: UIView {
     @IBOutlet weak var subscribersCountLabel: UILabel!
     @IBOutlet weak var friendsCountLabel: UILabel!
     
-    //MARK: - Functions
+    //MARK: - Public functions
     public func configureProfileHeaderView(user: User?) {
             avatarImageView.image = user?.avatarImage
             nameLabel.text = user?.name

@@ -10,8 +10,7 @@ import UIKit
 class FeedViewController: UIViewController {
         
     //MARK: Properties
-    var posts: [Post] = []
-    let dataManager = DataManager()
+    var feedModel: FeedModel!
     
     //MARK: - IBOutlets
     @IBOutlet var feedView: FeedView!
@@ -19,8 +18,9 @@ class FeedViewController: UIViewController {
     //MARK: - Lifecycle 
     override func viewDidLoad() {
         super.viewDidLoad()
-        posts = dataManager.generateArrayOfPosts(count: 28)
+        feedModel = FeedModel(delegate: self)
         configureTable()
+        feedModel.requireData()
     }
     
     //MARK: - Private functions
@@ -35,7 +35,7 @@ class FeedViewController: UIViewController {
         if segue.identifier == "postDetailShow" {
             guard let indexPath = sender as? IndexPath else { return }
             guard let detailViewController = segue.destination as? DetailPostViewController else { return }
-            detailViewController.post = posts[indexPath.row]
+            detailViewController.configure(post: feedModel.posts[indexPath.row])
         }
     }
 }
@@ -47,12 +47,12 @@ extension FeedViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return feedModel.posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostTableViewCell else { return UITableViewCell() }
-        cell.configure(post: posts[indexPath.row])
+        cell.configure(post: feedModel.posts[indexPath.row])
         return cell
     }
 }
@@ -65,15 +65,21 @@ extension FeedViewController: UITableViewDelegate {
     }
 }
 
-//MARK: - PostTableViewCellDelegate
+//MARK: - Post Table View Cell Delegate
 extension FeedViewController: PostTableViewCellDelegate {
     func likeTapped( sender: UITableViewCell) {
         guard let indexPath = feedView.tableView.indexPath(for: sender) else { return }
-        posts[indexPath.row].likesCount += 1
+        feedModel.posts[indexPath.row].likesCount += 1
     }
     
     func likeCanceled(sender: UITableViewCell) {
         guard let indexPath = feedView.tableView.indexPath(for: sender) else { return }
-        posts[indexPath.row].likesCount -= 1
+        feedModel.posts[indexPath.row].likesCount -= 1
+    }
+}
+
+extension FeedViewController: FeedModelDelegate {
+    func dataUpdated() {
+        feedView.tableView.reloadData()
     }
 }

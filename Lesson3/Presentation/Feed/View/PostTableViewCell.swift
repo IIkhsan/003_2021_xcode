@@ -16,14 +16,13 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
     
-    //MARK: Properties
+    //MARK: - Properties
     var post: Post?
     let layerManager = LayerManager()
     var isLikePressed = false
     weak var delegate: PostTableViewCellDelegate?
-
         
-    //MARK: IB Outlets
+    //MARK: - IB Outlets
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -32,7 +31,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     
-    //MARK: IB Actions
+    //MARK: - IB Actions
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         isLikePressed = !isLikePressed
         if isLikePressed {
@@ -47,7 +46,7 @@ class PostTableViewCell: UITableViewCell {
         likeCountLabel.text = post?.likesCount.description
     }
 
-    //MARK: Cell methods
+    //MARK: - Cell methods
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -56,13 +55,14 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    //MARK: Functions
+    //MARK: Public functions
     public func configure(post: Post) {
         self.post = post
         display(post: post)
         layerManager.makeViewRounded(view: authorImageView)
     }
     
+    //MARK: - Private functions
     private func display(post: Post) {
         authorImageView.image = post.authorImage
         authorNameLabel.text = post.authorName
