@@ -17,16 +17,19 @@ class LogInViewController: UIViewController {
     
     //MARK: IBActions
     @IBAction func enterButtonPressed(_ sender: UIButton) {
-        if logInModel.isValid(login: logInView.loginTextField.text ?? "", password: logInView.passwordTextField.text ?? "") {
+        let isLoginValid = logInModel.validateLogin(login: logInView.loginTextField.text ?? "")
+        logInView.handleLoginValidation(isValid: isLoginValid)
+        let passwordValidationResult = logInModel.validatePassword(password: logInView.passwordTextField.text ?? "")
+        logInView.handlePasswordValidation(result: passwordValidationResult)
+        if isLoginValid && passwordValidationResult.isValid {
             performSegue(withIdentifier: "enter", sender: nil)
         } else {
-            logInView.promptLabel.isHidden = false
+            logInView.showAlert(isLoginValid: isLoginValid, passwordValidationResult: passwordValidationResult)
         }
     }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        logInView.promptLabel.isHidden = true
     }
 }
