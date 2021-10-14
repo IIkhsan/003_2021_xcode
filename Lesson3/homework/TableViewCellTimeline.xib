@@ -31,7 +31,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="845" translatesAutoresizingMaskIntoConstraints="NO" id="LLV-dF-CTF">
-                        <rect key="frame" x="12" y="85" width="401" height="404"/>
+                        <rect key="frame" x="12" y="119" width="401" height="404"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K5X-DF-xBn">
                                 <rect key="frame" x="0.0" y="0.0" width="401" height="110"/>
@@ -47,23 +47,24 @@
                             </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="K5X-DF-xBn" firstAttribute="top" secondItem="LLV-dF-CTF" secondAttribute="topMargin" id="7cr-qX-Una"/>
                             <constraint firstItem="2sb-Ud-Me2" firstAttribute="top" secondItem="K5X-DF-xBn" secondAttribute="bottom" constant="8" symbolic="YES" id="OfX-BF-Zza"/>
                             <constraint firstItem="K5X-DF-xBn" firstAttribute="width" secondItem="LLV-dF-CTF" secondAttribute="width" id="eCZ-lR-4JD"/>
-                            <constraint firstItem="K5X-DF-xBn" firstAttribute="height" secondItem="LLV-dF-CTF" secondAttribute="height" multiplier="0.272277" id="hS3-hx-h1I"/>
+                            <constraint firstItem="K5X-DF-xBn" firstAttribute="height" secondItem="LLV-dF-CTF" secondAttribute="height" multiplier="0.272277" id="t2V-Lk-UwX"/>
                         </constraints>
                     </stackView>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                 <constraints>
-                    <constraint firstItem="LLV-dF-CTF" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.811245" id="1UC-lG-s3Z"/>
+                    <constraint firstItem="LLV-dF-CTF" firstAttribute="top" secondItem="eml-rU-8Kw" secondAttribute="bottom" constant="48" id="3Ey-8e-4QR"/>
                     <constraint firstItem="0SC-v5-sX3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="4bt-Mg-vKT"/>
                     <constraint firstAttribute="trailing" secondItem="0SC-v5-sX3" secondAttribute="trailing" constant="20" id="C2o-qD-exT"/>
-                    <constraint firstItem="LLV-dF-CTF" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="CKE-KU-sLU"/>
-                    <constraint firstItem="LLV-dF-CTF" firstAttribute="top" secondItem="eml-rU-8Kw" secondAttribute="bottom" constant="14" id="RTg-DJ-jD7"/>
+                    <constraint firstItem="LLV-dF-CTF" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.943529" id="CVU-Da-2Sg"/>
                     <constraint firstItem="0SC-v5-sX3" firstAttribute="leading" secondItem="eml-rU-8Kw" secondAttribute="trailing" constant="19" id="XNT-4a-GGp"/>
                     <constraint firstItem="eml-rU-8Kw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Ybd-JB-Hcm"/>
+                    <constraint firstItem="LLV-dF-CTF" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="aTy-RO-Mlf"/>
+                    <constraint firstItem="LLV-dF-CTF" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.811245" id="d4I-T5-28B"/>
                     <constraint firstItem="eml-rU-8Kw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="jX0-XA-taj"/>
-                    <constraint firstItem="LLV-dF-CTF" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.943529" id="kdO-sv-Lue"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

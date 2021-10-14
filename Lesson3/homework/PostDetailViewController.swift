@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PostDetailViewControllerDelegate: AnyObject {
-    func onDataChange(post: Post)
+    
 }
 
 class PostDetailViewController: UIViewController {
@@ -32,7 +32,6 @@ class PostDetailViewController: UIViewController {
             nicknameLabel.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         }
     }
-    
     
     @IBOutlet weak var avatarImageView: UIImageView! {
         didSet {
@@ -73,17 +72,5 @@ class PostDetailViewController: UIViewController {
         descriptionTextView.frame.size.width = 1000
 
         descriptionTextView.sizeToFit()
-//        delegate?.onDataChange(post: post)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

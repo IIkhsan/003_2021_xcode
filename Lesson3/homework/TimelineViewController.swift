@@ -8,8 +8,6 @@
 import UIKit
 
 class TimelineViewController: UIViewController, PostDetailViewControllerDelegate {
-   
-    
 
     fileprivate let cellIndentifier = "myCellIdentifier"
     
@@ -35,7 +33,7 @@ class TimelineViewController: UIViewController, PostDetailViewControllerDelegate
     
     private func configure() {
         let nib = UINib(nibName: "TableViewCellTimeline", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellIndentifier )
+        tableView.register(nib, forCellReuseIdentifier: cellIndentifier)
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 88.0
@@ -44,25 +42,21 @@ class TimelineViewController: UIViewController, PostDetailViewControllerDelegate
         
         posts = [Post(author: names.randomElement()!, authorImage: UIImage(named: images.randomElement()!)!, image: nil, description: descriptions.randomElement()!),
                  Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description:descriptions.randomElement()!),
-            Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: "Кто такие айтишники? 💻 Наверное, каждый слышал это слово и сам не раз применял в отношении человека, который, так и ли иначе, связан с компьютерами. Но есть множество разных профессий в сфере ИТ - разработчики, аналитики, системные администраторы, тестировщики и т.д. Объясняем в новом выпуске программы Мастера чем отличаются и чем схожи все эти профессии и кто же всё-таки такие айтишники В съемках приняли участие: Михаил Абрамский, директор ИТИС, Булат Ганиев, управляющий партнер компании Технократия С нас стартовал новый сезон программы, она выходит каждую субботу на тк Россияи, похоже, что одним выпуском с нами сезон не ограничится! Увидимся еще😉 "),
-            Post(author: names.randomElement()!, authorImage:UIImage(named:  images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: nil)
-            ]
-        
+                 Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: descriptions.randomElement()!),
+                 Post(author: names.randomElement()!, authorImage:UIImage(named: images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: descriptions.randomElement()!),
+                 Post(author: names.randomElement()!, authorImage:UIImage(named:  images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: nil),
+                 Post(author: names.randomElement()!, authorImage:UIImage(named:  images.randomElement()!)!, image: UIImage(named: images.randomElement()!), description: nil)
+        ]
     }
     
     private func takeAppereance() {
         view.backgroundColor = .systemGray
         navigationController?.navigationBar.barTintColor = UIColor.systemGray
     }
- 
+
 }
 
 extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func onDataChange(post: Post) {
-        posts.append(post)
-        tableView.reloadData()
-    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,18 +94,5 @@ extension TimelineViewController: UITableViewDataSource, UITableViewDelegate {
                 viewController.post = post
                 viewController.delegate = self
             }
-
     }
-    
- 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

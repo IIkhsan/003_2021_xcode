@@ -34,21 +34,8 @@ class TableViewCellTimeline: UITableViewCell {
         avatarImageView.image = post.authorImage
         nicknameLabel.text = post.author
         textOfPost.textContainer.maximumNumberOfLines = 5
-      
-        if let image = post.image {
-            postImageView.image = image
-        }
-//        else  {
-//            postImageView.isHidden = true
-//        }
-        
-        if post.description != nil {
-            textOfPost.text = post.description
-        }
-        else {
-            textOfPost.isHidden = true
-        }
-
+        postImageView.image = post.image
+        textOfPost.text = post.description
     }
     
 }
