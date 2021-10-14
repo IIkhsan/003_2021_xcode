@@ -7,22 +7,6 @@
 
 import UIKit
 
-class Post {
-    var avatar: String
-    var textOfPost: String
-    var name: String
-    var imageOfOfPost: String
-    var datePost: String
-    
-    init(foto: String, textInPost: String, nameOfPost: String, image: String, dateOfPost: String) {
-        avatar = foto
-        textOfPost = textInPost
-        name = nameOfPost
-        imageOfOfPost = image
-        datePost = dateOfPost
-    }
-}
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -38,25 +22,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         for _ in 0..<7 {
-            dataSource.append(Post.init(
-                foto: imagesForPost.randomElement() ?? "",
-                textInPost: textsForPost.randomElement() ?? "",
-                nameOfPost: namesForPost.randomElement() ?? "",
-                image: imagesForPost.randomElement() ?? "",
-                dateOfPost: datesForPost.randomElement() ?? ""))
+            createDefaultPost()
         }
         dataSource.append(Post.init(
-            foto: imagesForPost.randomElement() ?? "",
-            textInPost: "",
-            nameOfPost: namesForPost.randomElement() ?? "",
-            image: imagesForPost.randomElement() ?? "",
-            dateOfPost: datesForPost.randomElement() ?? ""))
+            foto: imagesForPost.randomElement(),
+            textInPost: nil,
+            nameOfPost: namesForPost.randomElement(),
+            image: imagesForPost.randomElement(),
+            dateOfPost: datesForPost.randomElement()))
         dataSource.append(Post.init(
-            foto: imagesForPost.randomElement() ?? "",
-            textInPost: textsForPost.randomElement() ?? "",
-            nameOfPost: namesForPost.randomElement() ?? "",
-            image: "",
-            dateOfPost: datesForPost.randomElement() ?? ""))
+            foto: imagesForPost.randomElement(),
+            textInPost: textsForPost.randomElement(),
+            nameOfPost: namesForPost.randomElement(),
+            image: nil,
+            dateOfPost: datesForPost.randomElement()))
         tableView.estimatedRowHeight = 40
     }
     
@@ -66,7 +45,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-        cell.configure(text: dataSource[indexPath.row].name, avatar: dataSource[indexPath.row].avatar , messageText: dataSource[indexPath.row].textOfPost, imagePost: dataSource[indexPath.row].imageOfOfPost, dateOfPost: dataSource[indexPath.row].datePost)
+        cell.configure(
+            text: dataSource[indexPath.row].name ?? "defaultText",
+            avatar: dataSource[indexPath.row].avatar ?? "image1",
+            messageText: dataSource[indexPath.row].textOfPost ?? " ",
+            imagePost: dataSource[indexPath.row].imageOfOfPost ?? " ",
+            dateOfPost: dataSource[indexPath.row].datePost ?? "01.01.2021")
         return cell
     }
     
@@ -77,4 +61,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         vc.post = dataSource[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func createDefaultPost() {
+        dataSource.append(Post.init(
+            foto: imagesForPost.randomElement(),
+            textInPost: textsForPost.randomElement(),
+            nameOfPost: namesForPost.randomElement(),
+            image: imagesForPost.randomElement(),
+            dateOfPost: datesForPost.randomElement()))
+    }
 }
+

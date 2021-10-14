@@ -26,5 +26,4 @@ class CustomTableViewCell: UITableViewCell {
         avatarImage.layer.cornerRadius = avatarImage.frame.size.height / 2
         dateOfPostLabel.text = dateOfPost
     }
-
 }

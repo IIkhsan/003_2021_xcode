@@ -22,11 +22,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        avatar.image = UIImage(named: post?.avatar ?? "")
+        avatar.image = UIImage(named: post?.avatar ?? "image1")
         avatar.layer.cornerRadius = avatar.frame.size.height / 2
         nameHowPost.text = post?.name
         textOfPost.text = post?.textOfPost
-        imageOfPost.image = UIImage(named: post?.imageOfOfPost ?? "")
+        imageOfPost.image = UIImage(named: post?.imageOfOfPost ?? " ")
         daeOfPost.text = post?.datePost
     }
 }
