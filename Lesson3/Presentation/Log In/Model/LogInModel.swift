@@ -7,9 +7,10 @@
 
 import Foundation
 class LogInModel {
-    
+        
     //MARK: - Public functions
     func isValid(login: String, password: String) -> Bool {
+        //6 lesson
         return true
     }
 }
