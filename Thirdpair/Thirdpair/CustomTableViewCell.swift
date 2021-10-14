@@ -9,12 +9,12 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     
-    //MARK:- LABELS
+    //MARK: - LABELS
     @IBOutlet weak var someTextLabel: UILabel!
     @IBOutlet weak var textOfPost: UILabel!
     @IBOutlet weak var dateOfPostLabel: UILabel!
     
-    //MARK:- IMAGE VIEWS
+    //MARK: - IMAGE VIEWS
     @IBOutlet weak var imageOfPost: UIImageView!
     @IBOutlet weak var avatarImage: UIImageView!
     
