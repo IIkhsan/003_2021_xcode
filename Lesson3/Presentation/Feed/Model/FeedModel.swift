@@ -11,7 +11,7 @@ class FeedModel {
     
     //MARK: - Properties
     var dataServive = DataService()
-    var posts: [Post] = []
+    final var posts: [Post] = []
     weak var delegate: FeedModelDelegate?
     
     //MARK: - init

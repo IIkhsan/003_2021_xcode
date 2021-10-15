@@ -11,6 +11,7 @@ class LogInViewController: UIViewController {
     
     //MARK: - Properties
     var logInModel = LogInModel()
+    var user: User? = nil
     
     //MARK: IBOutlets
     @IBOutlet weak var logInView: LogInView!
@@ -22,9 +23,19 @@ class LogInViewController: UIViewController {
         let passwordValidationResult = logInModel.validatePassword(password: logInView.passwordTextField.text ?? "")
         logInView.handlePasswordValidation(result: passwordValidationResult)
         if isLoginValid && passwordValidationResult.isValid {
-            performSegue(withIdentifier: "enter", sender: nil)
+           DataService.checkExistingUsers(login: logInView.loginTextField.text ?? "" , password: logInView.passwordTextField.text ?? "", competion: { user in
+               self.user = user
+            })
+            if let alert = logInView.getAlertAboutEnteredUser(user: user) {
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {_ in
+                    alert.dismiss(animated: true, completion: nil)
+                    self.performSegue(withIdentifier: "enter", sender: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            }
+            self.performSegue(withIdentifier: "enter", sender: nil)
         } else {
-            logInView.showAlert(isLoginValid: isLoginValid, passwordValidationResult: passwordValidationResult)
+            self.present(logInView.getValidationErrorAlert(isLoginValid: isLoginValid, passwordValidationResult: passwordValidationResult), animated: true, completion: nil)
         }
     }
     

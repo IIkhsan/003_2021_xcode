@@ -19,14 +19,21 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         profileModel = ProfileModel(delegate: self)
+        getUser()
         configureTableView()
         configureProfileView()
-        profileModel.requireData()
     }
     
     //MARK: - Private functions
     private func configureProfileView() {
         profileView.configureProfileHeaderView(user: profileModel.user)
+    }
+    
+    private func getUser() {
+        profileModel.user = DataService.existingUser
+        if profileModel.user == nil {
+            profileModel.requireData()
+        }
     }
     
     private func configureTableView() {
@@ -38,9 +45,15 @@ class ProfileViewController: UIViewController {
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetailFromProfile" {
+            guard let user = profileModel.user else { return }
             guard let indexPath = sender as? IndexPath else { return }
             guard let detailViewController = segue.destination as? DetailPostViewController else { return }
-            detailViewController.configure(post: profileModel.posts[indexPath.row])
+            detailViewController.configure(post: user.posts[indexPath.row])
+        }
+        if segue.identifier == "editStatus" {
+            guard let vc = segue.destination as? ProfileStatusEditViewController else { return }
+            vc.oldStatus = profileModel.user?.status
+            vc.delegate = self
         }
     }
 }
@@ -50,12 +63,13 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "postCell") as? PostTableViewCell else { return UITableViewCell() }
-        cell.configure(post: profileModel.posts[indexPath.row])
+        guard let user = profileModel.user else { return UITableViewCell() }
+        cell.configure(post: user.posts[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profileModel.posts.count
+        return profileModel.user?.posts.count ?? 0
     }
 }
 
@@ -72,6 +86,13 @@ extension ProfileViewController: UITableViewDelegate {
 extension ProfileViewController: FeedModelDelegate {
     func dataUpdated() {
         profileView.tableView.reloadData()
+        configureProfileView()
+    }
+}
+
+extension ProfileViewController: ProfileStatusEditDelegateProtocol {
+    func changeStatus(status: String) {
+        profileModel.user?.status = status
         configureProfileView()
     }
 }

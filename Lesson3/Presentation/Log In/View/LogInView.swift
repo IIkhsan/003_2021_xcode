@@ -32,7 +32,7 @@ class LogInView: UIView {
         }
     }
     
-    func showAlert(isLoginValid: Bool, passwordValidationResult: (isValid: Bool,errorMsg: String?)) {
+    func getValidationErrorAlert(isLoginValid: Bool, passwordValidationResult: (isValid: Bool,errorMsg: String?)) -> UIAlertController {
         var alertTitle = ""
         var alertDesc: String?
         if !isLoginValid {
@@ -46,7 +46,21 @@ class LogInView: UIView {
             alertDesc = passwordValidationResult.errorMsg
         }
         let alert = UIAlertController(title: alertTitle, message: alertDesc, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: { _ in alert.dismiss(animated: true, completion: nil) })
+        alert.addAction(action)
+        return alert
+    }
+    
+    func getAlertAboutEnteredUser(user: User?) -> UIAlertController? {
+        guard let user = user else { return nil }
+        let alertTitle = "You entered in as \(user.name)"
+        let description =
+        """
+         city: \(user.city)
+         status: \(user.status)
+         subs: \(user.subscribersCount)
+         """
+        let alert = UIAlertController(title: alertTitle, message: description, preferredStyle: .alert)
+        return alert
     }
 }

@@ -8,7 +8,3 @@
 import Foundation
 import UIKit
 
-protocol PostTableViewCellDelegate: AnyObject {
-    func likeTapped(sender: UITableViewCell)
-    func likeCanceled(sender: UITableViewCell)
-}

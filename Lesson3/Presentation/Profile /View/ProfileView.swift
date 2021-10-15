@@ -20,10 +20,13 @@ class ProfileView: UIView {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var subscribersCountLabel: UILabel!
     @IBOutlet weak var friendsCountLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var editStatusButton: UIButton!
     
     //MARK: - Public functions
     public func configureProfileHeaderView(user: User?) {
             avatarImageView.image = user?.avatarImage
+        statusLabel.text = user?.status
             nameLabel.text = user?.name
             phoneNumberLabel.text = user?.phoneNumber
             cityLabel.text = "City: \(user?.city ?? "")"

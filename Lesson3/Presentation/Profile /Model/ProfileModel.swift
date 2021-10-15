@@ -7,19 +7,24 @@
 
 import Foundation
 
-class ProfileModel: FeedModel {
+class ProfileModel {
     //MARK: - Properties
     var user: User?
-    
+    var dataService = DataService()
+    var delegate: FeedModelDelegate
     //MARK: - public functions
-    override func requireData() {
-        dataServive.requireUser(completion: { user in
+    init(delegate: FeedModelDelegate) {
+        self.delegate = delegate
+    }
+    
+    func requireData() {
+        dataService.requireUser(completion: { user in
             self.user = user
-            self.delegate?.dataUpdated()
+            self.delegate.dataUpdated()
         })
-        dataServive.requireArrayOfPosts(completion: { posts in
-            self.posts = posts
-            self.delegate?.dataUpdated()
+        dataService.requireArrayOfPosts(completion: { posts in
+            self.user?.posts = posts
+            self.delegate.dataUpdated()
         })
     }
 }
