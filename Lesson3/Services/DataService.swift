@@ -16,7 +16,9 @@ class DataService {
     //MARK: - Functions
     func requireUser(completion: @escaping (User) -> Void) {
         sleep(3)
-        completion(dataGenerator.generateUser())
+        let user = dataGenerator.generateUser()
+        dataGenerator.fillArrayOfPostsForUser(user: user, count: Int.random(in: 5..<13))
+        completion( user )
     }
     
     func requireArrayOfPosts(completion: @escaping ([Post]) -> Void) {
@@ -35,7 +37,7 @@ class DataService {
             existingUser = user
             competion(user)
         return
-        case ("leha@mail.com", "leha123456"):
+        case ("leha@gmail.com", "leha123456"):
             let image = UIImage(named: "leha")!
             let user = User(avatarImage: image, name: "Алексей Алексеевич", city: "Kazan", phoneNumber: "+73232643232", friendsCount: 120, subscribersCount: 120, status: "🙉")
             user.posts.append(Post(content: "авотлаывлтовыатол", contentImage: nil, authorImage: user.avatarImage, authorName: user.name, likesCount: 23, date: Date()))

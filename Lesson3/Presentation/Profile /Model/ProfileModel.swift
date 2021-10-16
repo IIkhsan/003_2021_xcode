@@ -22,9 +22,5 @@ class ProfileModel {
             self.user = user
             self.delegate.dataUpdated()
         })
-        dataService.requireArrayOfPosts(completion: { posts in
-            self.user?.posts = posts
-            self.delegate.dataUpdated()
-        })
     }
 }

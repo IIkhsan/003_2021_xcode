@@ -63,4 +63,22 @@ class LogInView: UIView {
         let alert = UIAlertController(title: alertTitle, message: description, preferredStyle: .alert)
         return alert
     }
+    
+    public func getAlertAboutExistingUsers() -> UIAlertController {
+        let alert = UIAlertController(title: "Пользователи:", message:
+       """
+        1)ildar@gmail.com
+        ildar123456
+        2)leha@gmail.com
+        leha123456
+        3)sanya@gmail.com
+        sanya123456
+        """, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: {_ in
+            alert.dismiss(animated: true, completion: nil)
+        })
+        alert.addAction(action)
+        return alert
+    }
+
 }

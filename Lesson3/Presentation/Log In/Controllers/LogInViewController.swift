@@ -43,4 +43,8 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.present(logInView.getAlertAboutExistingUsers(), animated: true, completion: nil)
+    }
 }
