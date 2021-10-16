@@ -21,7 +21,6 @@ class PostTableViewCell: UITableViewCell {
     let layerManager = LayerManager()
     var isLikePressed = false
     weak var delegate: PostTableViewCellDelegate?
-
         
     //MARK: IB Outlets
     @IBOutlet weak var authorImageView: UIImageView!
@@ -29,12 +28,10 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeCountLabel: UILabel!
-    
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     
     //MARK: IB Actions
-    
     @IBAction func likeButtonPressed(_ sender: UIButton) {
         isLikePressed = !isLikePressed
         if isLikePressed {

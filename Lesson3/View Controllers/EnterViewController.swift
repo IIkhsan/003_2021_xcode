@@ -23,6 +23,7 @@ class EnterViewController: UIViewController {
         }
     }
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         promptLabel.isHidden = true
