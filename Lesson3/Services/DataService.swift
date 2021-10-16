@@ -13,12 +13,12 @@ class DataService {
     static var existingUser: User?
     private var dataGenerator = DataGenerator()
     
-    //MARK: - Functions
+    //MARK: - Public functions
     func requireUser(completion: @escaping (User) -> Void) {
         sleep(3)
         let user = dataGenerator.generateUser()
         dataGenerator.fillArrayOfPostsForUser(user: user, count: Int.random(in: 5..<13))
-        completion( user )
+        completion(user)
     }
     
     func requireArrayOfPosts(completion: @escaping ([Post]) -> Void) {

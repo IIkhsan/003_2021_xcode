@@ -90,6 +90,7 @@ extension ProfileViewController: FeedModelDelegate {
     }
 }
 
+//MARK: - Profile Status Edit Delegate
 extension ProfileViewController: ProfileStatusEditDelegateProtocol {
     func changeStatus(status: String) {
         profileModel.user?.status = status

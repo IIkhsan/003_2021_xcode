@@ -8,11 +8,13 @@
 import Foundation
 
 class ProfileModel {
+    
     //MARK: - Properties
     var user: User?
     var dataService = DataService()
     var delegate: FeedModelDelegate
-    //MARK: - public functions
+    
+    //MARK: - Public functions
     init(delegate: FeedModelDelegate) {
         self.delegate = delegate
     }

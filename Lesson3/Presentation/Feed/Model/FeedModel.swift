@@ -14,12 +14,11 @@ class FeedModel {
     final var posts: [Post] = []
     weak var delegate: FeedModelDelegate?
     
-    //MARK: - init
+    //MARK: - Public functions
     init(delegate: FeedModelDelegate) {
         self.delegate = delegate
     }
     
-    //MARK: - Public functions
     public func requireData() {
         dataServive.requireArrayOfPosts(completion: { posts in
             self.posts = posts

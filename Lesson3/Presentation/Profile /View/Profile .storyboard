@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Edi-67-evH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Edi-67-evH">
                                 <rect key="frame" x="0.0" y="39" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="HPk-GU-WE0">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
@@ -164,6 +163,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4hH-jm-S16"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Edi-67-evH" firstAttribute="leading" secondItem="4hH-jm-S16" secondAttribute="leading" id="KiH-j3-1E7"/>
+                            <constraint firstItem="Edi-67-evH" firstAttribute="trailing" secondItem="4hH-jm-S16" secondAttribute="trailing" id="YA4-dc-21C"/>
+                            <constraint firstAttribute="bottom" secondItem="Edi-67-evH" secondAttribute="bottom" constant="39" id="p1T-Su-Pfu"/>
+                            <constraint firstItem="Edi-67-evH" firstAttribute="top" secondItem="ePr-nU-bOP" secondAttribute="top" constant="39" id="wcN-FL-JAf"/>
+                        </constraints>
                         <connections>
                             <outlet property="avatarImageView" destination="GGV-p0-4S0" id="23U-kF-MMg"/>
                             <outlet property="cityLabel" destination="xLa-Xg-aSa" id="O6i-1b-NJp"/>
