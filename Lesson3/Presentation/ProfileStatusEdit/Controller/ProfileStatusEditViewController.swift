@@ -10,7 +10,7 @@ import UIKit
 class ProfileStatusEditViewController: UIViewController {
 
     //MARK: - Properties
-    var delegate: ProfileStatusEditDelegateProtocol?
+    weak var delegate: ProfileStatusEditDelegateProtocol?
     var oldStatus: String?
     
     //MARK: - IBOutlets

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ProfileStatusEditDelegateProtocol {
+protocol ProfileStatusEditDelegateProtocol: AnyObject {
     func changeStatus(status: String)
 }

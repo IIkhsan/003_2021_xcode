@@ -12,7 +12,7 @@ class ProfileModel {
     //MARK: - Properties
     var user: User?
     var dataService = DataService()
-    var delegate: FeedModelDelegate
+    weak var delegate: FeedModelDelegate?
     
     //MARK: - Public functions
     init(delegate: FeedModelDelegate) {
@@ -22,7 +22,7 @@ class ProfileModel {
     func requireData() {
         dataService.requireUser(completion: { user in
             self.user = user
-            self.delegate.dataUpdated()
+            self.delegate?.dataUpdated()
         })
     }
 }
