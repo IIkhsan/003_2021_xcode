@@ -8,7 +8,6 @@
 import UIKit
 
 class ProfileStatusEditView: UIView {
-
     
     //MARK: - Properties
     @IBOutlet weak var okButton: UIButton!

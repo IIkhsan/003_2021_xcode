@@ -14,7 +14,7 @@ class LogInViewController: UIViewController {
     var user: User? = nil
     
     //MARK: IBOutlets
-    @IBOutlet weak var logInView: LogInView!
+    @IBOutlet var logInView: LogInView!
     
     //MARK: IBActions
     @IBAction func enterButtonPressed(_ sender: UIButton) {
