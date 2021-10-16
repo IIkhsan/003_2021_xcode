@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     var profileModel: ProfileModel!
     
     //MARK: IBOutlets
-    @IBOutlet weak var profileView: ProfileView!
+    @IBOutlet var profileView: ProfileView!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {

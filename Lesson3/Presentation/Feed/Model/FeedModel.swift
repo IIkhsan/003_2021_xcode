@@ -10,7 +10,7 @@ import UIKit
 class FeedModel {
     
     //MARK: - Properties
-    var dataServive = DataService()
+    var dataService = DataService()
     var posts: [Post] = []
     weak var delegate: FeedModelDelegate?
     
@@ -21,7 +21,7 @@ class FeedModel {
     
     //MARK: - Public functions
     public func requireData() {
-        dataServive.requireArrayOfPosts(completion: { posts in
+        dataService.requireArrayOfPosts(completion: { posts in
             self.posts = posts
             self.delegate?.dataUpdated()
         })

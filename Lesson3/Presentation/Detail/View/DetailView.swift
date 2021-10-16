@@ -19,7 +19,7 @@ class DetailView: UIView {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     
-    //MARK: - Private functions 
+    //MARK: - Public functions
     public func configure(post: Post?) {
         authorImageView.image = post?.authorImage
         authorNameLabel.text = post?.authorName

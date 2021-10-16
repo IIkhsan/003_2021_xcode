@@ -78,6 +78,7 @@ extension FeedViewController: PostTableViewCellDelegate {
     }
 }
 
+//MARK: - Feed Model Delegate
 extension FeedViewController: FeedModelDelegate {
     func dataUpdated() {
         feedView.tableView.reloadData()

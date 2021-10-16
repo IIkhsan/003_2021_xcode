@@ -13,7 +13,7 @@ class DetailPostViewController: UIViewController {
     var detailModel: DetailModel = DetailModel()
     
     //MARK: - IBOutlets
-    @IBOutlet weak var detailView: DetailView!
+    @IBOutlet var detailView: DetailView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {

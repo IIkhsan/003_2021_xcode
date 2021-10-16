@@ -13,11 +13,11 @@ class ProfileModel: FeedModel {
     
     //MARK: - public functions
     override func requireData() {
-        dataServive.requireUser(completion: { user in
+        dataService.requireUser(completion: { user in
             self.user = user
             self.delegate?.dataUpdated()
         })
-        dataServive.requireArrayOfPosts(completion: { posts in
+        dataService.requireArrayOfPosts(completion: { posts in
             self.posts = posts
             self.delegate?.dataUpdated()
         })
