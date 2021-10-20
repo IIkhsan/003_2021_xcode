@@ -79,15 +79,10 @@
 				A2AC0F9E270301F100DD985F /* AppDelegate.swift */,
 				A2AC0FA0270301F100DD985F /* SceneDelegate.swift */,
 				A2AC0FA2270301F100DD985F /* ViewController.swift */,
-				A2AC0FB6270306B600DD985F /* ImageOnlyPostTableViewCell.swift */,
-				A24AE82D270322A40089D134 /* ImageOnlyPostTableViewCell.xib */,
-				A24AE82F2703235B0089D134 /* TextOnlyPostTableViewCell.swift */,
-				A24AE8302703235B0089D134 /* TextOnlyPostTableViewCell.xib */,
-				A24AE833270326730089D134 /* FullPostTableViewCell.swift */,
-				A24AE834270326730089D134 /* FullPostTableViewCell.xib */,
-				A24AE837270345DE0089D134 /* DetailViewController.swift */,
-				A24AE83D27034A7F0089D134 /* SecondDetailViewController.swift */,
-				A24AE83F27034A8A0089D134 /* ThirdDetailViewController.swift */,
+				A2B15C7027201660000DB59C /* ImageOnlyPost */,
+				A2B15C6F27201659000DB59C /* TextOnlyPost */,
+				A2B15C6E27201651000DB59C /* FullPost */,
+				A2B15C6D2720163C000DB59C /* DetailViewControllers */,
 				A2AC0FA4270301F100DD985F /* Main.storyboard */,
 				A2B8C62F2703104B0086A533 /* PostStruct.swift */,
 				A2AC0FA7270301F200DD985F /* Assets.xcassets */,
@@ -95,6 +90,43 @@
 				A2AC0FAC270301F200DD985F /* Info.plist */,
 			);
 			path = ThirdLesson;
+			sourceTree = "<group>";
+		};
+		A2B15C6D2720163C000DB59C /* DetailViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A24AE837270345DE0089D134 /* DetailViewController.swift */,
+				A24AE83D27034A7F0089D134 /* SecondDetailViewController.swift */,
+				A24AE83F27034A8A0089D134 /* ThirdDetailViewController.swift */,
+			);
+			path = DetailViewControllers;
+			sourceTree = "<group>";
+		};
+		A2B15C6E27201651000DB59C /* FullPost */ = {
+			isa = PBXGroup;
+			children = (
+				A24AE833270326730089D134 /* FullPostTableViewCell.swift */,
+				A24AE834270326730089D134 /* FullPostTableViewCell.xib */,
+			);
+			path = FullPost;
+			sourceTree = "<group>";
+		};
+		A2B15C6F27201659000DB59C /* TextOnlyPost */ = {
+			isa = PBXGroup;
+			children = (
+				A24AE82F2703235B0089D134 /* TextOnlyPostTableViewCell.swift */,
+				A24AE8302703235B0089D134 /* TextOnlyPostTableViewCell.xib */,
+			);
+			path = TextOnlyPost;
+			sourceTree = "<group>";
+		};
+		A2B15C7027201660000DB59C /* ImageOnlyPost */ = {
+			isa = PBXGroup;
+			children = (
+				A2AC0FB6270306B600DD985F /* ImageOnlyPostTableViewCell.swift */,
+				A24AE82D270322A40089D134 /* ImageOnlyPostTableViewCell.xib */,
+			);
+			path = ImageOnlyPost;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
