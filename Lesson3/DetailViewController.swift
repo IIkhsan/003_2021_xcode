@@ -1,6 +1,6 @@
 //
 //  DetailViewController.swift
-//  Thirdpair
+//  Lesson3
 //
 //  Created by Тимур Миргалиев on 28.09.2021.
 //

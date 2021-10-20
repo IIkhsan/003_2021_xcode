@@ -1,6 +1,6 @@
 //
 //  CustomTableViewCell.swift
-//  Thirdpair
+//  Lesson3
 //
 //  Created by Тимур Миргалиев on 27.09.2021.
 //

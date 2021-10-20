@@ -1,6 +1,6 @@
 //
 //  Post.swift
-//  Thirdpair
+//  Lesson3
 //
 //  Created by Тимур Миргалиев on 14.10.2021.
 //
